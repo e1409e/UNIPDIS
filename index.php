@@ -12,16 +12,18 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Cedula</th>
-            <th scope="col">Carrera</th>
             <th scope="col">Numero de telefono</th>
             <th scope="col">Correo</th>
-            <th scope="col">Telefono</th>
+            <th scope="col">Periodo</th>
+            <th scope="col">Facultad</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Nombre del contacto</th>
+            <th scope="col">Telefono del contacto</th>
             <th scope="col">Discapacidad</th>
             <th scope="col">Edad</th>
-            <th scope="col">Certificado del conapdis</th>
             <th scope="col">Observaciones</th>
             <th scope="col">Seguimiento</th>
-            <th scope="col">Año</th>
+            <th scope="col">Fecha de Registro</th>
             <th scope="col">Acciones</th>
         
           </tr>
@@ -39,17 +41,19 @@
 
                 <td><?php echo $row['nombres'] ?></td>
                 <td><?php echo $row['apellidos'] ?></td>
-                <td><?php echo $row['C.I'] ?></td>
-                <td><?php echo $row['carrera'] ?></td>
+                <td><?php echo $row['cedula'] ?></td>
                 <td><?php echo $row['telefono'] ?></td>
                 <td><?php echo $row['correo'] ?></td>
-                <td><?php echo $row['num_telf'] ?></td>
-                <td><?php echo $row['discapacidad'] ?></td>
+                <td><?php echo $row['periodo_id'] ?></td>
+                <td><?php echo $row['facultad_id'] ?></td>
+                <td><?php echo $row['carrera_id'] ?></td>
+                <td><?php echo $row['nombre_contacto'] ?></td>
+                <td><?php echo $row['telefono_contacto'] ?></td>
+                <td><?php echo $row['discapacidad_id'] ?></td>
                 <td><?php echo $row['edad'] ?></td>
-                <td><?php echo $row['certificado_conapdis'] ?></td>
                 <td><?php echo $row['observaciones'] ?></td>
                 <td><?php echo $row['seguimiento'] ?></td>
-                <td><?php echo $row['year'] ?></td>
+                <td><?php echo $row['fecha_registro'] ?></td>
               
 
                 <!--Botones de acciones-->

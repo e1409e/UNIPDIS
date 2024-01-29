@@ -27,11 +27,6 @@
             <input type="text" name="cedula" class="form-control">
         </div>
 
-        <h6>Carrera</h6>
-        <div class="form-group">
-            <input type="text" name="carrera" class="form-control">
-        </div>
-
         <h6>Telefono del Estudiante</h6>
         <div class="form-group">
             <input type="text" name="telefono" class="form-control">
@@ -42,25 +37,116 @@
             <input type="text" name="correo" class="form-control">
         </div>
 
-        <h6>Numero de Telefono</h6>
+            <h6 for="opciones">Periodo:</h6>
+                <select name="periodo" id="periodo">
+                   <option value="periodo">Seleccione un periodo</option>
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_periodo, periodos FROM periodo";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_periodo'] . '">' . $fila['periodos'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>
+            
+
+            <h6 for="opciones">Facultades:</h6>
+                <select name="facultades" id="facultades">
+                   <option value="facultad">Seleccione una Facultad</option>
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_facultad, facultades FROM facultad";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_facultad'] . '">' . $fila['facultades'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>
+
+            <h6 for="opciones">Carreras:</h6>
+                <select name="carrera" id="carrera">
+                   <option value="carrera">Seleccione una carrera</option>
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_carrera, carreras FROM carrera";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_carrera'] . '">' . $fila['carreras'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>    
+
+
+       
+        <h6>Nombre del contacto</h6>
         <div class="form-group">
-            <input type="text" name="num_tlf" class="form-control">
+            <input type="text" name="nomb_contacto" class="form-control">
         </div>
 
-        <h6>Discapacidad</h6>
+        <h6>Telefono del contacto</h6>
+        <div class="form-group">
+            <input type="text" name="tlf_contacto" class="form-control">
+        </div>
+
+
+        <!-- <h6>Discapacidad</h6>
         <div class="form-group">
             <input type="text" name="discapacidad" class="form-control">
         </div>
+ -->
+        <h6 for="opciones">Discapacidad:</h6>
+                <select name="discapacidad" id="discapacidad">
+                   <option value="discapacidad">Seleccione una discapacidad</option>
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_discapacidad, discapacidades FROM discapacidad";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_discapacidad'] . '">' . $fila['discapacidades'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>   
+        
 
         <h6>Edad del Estudiante</h6>
         <div class="form-group">
             <input type="text" name="edad" class="form-control">
         </div>
 
-        <h6>¿El estudiante posee certificado del conapdis?</h6>
-        <div class="form-group">
-            <input type="text" name="certificado_conapdis" class="form-control">
-        </div>
+        
 
         <h6>Observaciones</h6>
         <div class="form-group">
@@ -72,9 +158,12 @@
             <input type="text" name="seguimiento" class="form-control">
         </div>
 
-        <h6>Año</h6>
+        <h6>Fecha de Registro</h6>
         <div class="form-group">
-            <input type="text" name="year" class="form-control">
+
+            <input type="text" name="Fecha_registro" class="form-control">
+            
+
         </div>
        
        <input type="submit" name="Guardar" class="btn btn-success btn-block" value="Guardado">
