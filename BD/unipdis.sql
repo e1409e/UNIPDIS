@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2024 a las 05:04:02
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 04-02-2024 a las 22:49:49
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -134,7 +134,7 @@ INSERT INTO `facultad` (`id_facultad`, `facultades`) VALUES
 --
 
 CREATE TABLE `historial_medico` (
-  `id_HistorialMedico` int(11) NOT NULL,
+  `id_historialmedico` int(11) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
   `certificado_conapdis` varchar(2) NOT NULL,
   `informe_medico` varchar(2) NOT NULL,
@@ -259,7 +259,7 @@ ALTER TABLE `facultad`
 -- Indices de la tabla `historial_medico`
 --
 ALTER TABLE `historial_medico`
-  ADD PRIMARY KEY (`id_HistorialMedico`),
+  ADD PRIMARY KEY (`id_historialmedico`),
   ADD KEY `id_estudiante` (`id_estudiante`);
 
 --
@@ -328,7 +328,7 @@ ALTER TABLE `facultad`
 -- AUTO_INCREMENT de la tabla `historial_medico`
 --
 ALTER TABLE `historial_medico`
-  MODIFY `id_HistorialMedico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historialmedico` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `incidencias`

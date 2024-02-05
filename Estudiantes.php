@@ -75,7 +75,7 @@
           </table>
 
         </div>
-        <button class="btn btn-primary btn-sm" onclick="toggleSeccion()">+</button> 
+        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> 
        
 
     </div>

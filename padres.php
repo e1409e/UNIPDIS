@@ -14,20 +14,20 @@
           <table class="table table-bordered ">
             <thead>
               <tr>
-                <th class="col-auto">tipo_padre</th>
-                <th class="col-auto">nombre_padre</th>
-                <th class="col-auto">apellido_padre</th>
-                <th class="col-auto">cedula_padre</th>
-                <th class="col-auto">lugar_nacimiento</th>
-                <th class="col-auto">fecha_nacimiento</th>
-                <th class="col-auto">direccion_habitacion</th>
-                <th class="col-auto">telefono_contacto</th>
-                <th class="col-auto">lugar_trabajo</th>
-                <th class="col-auto">estado</th>
-                <th class="col-auto">municipio</th>
-                <th class="col-auto">departamento</th>
-                <th class="col-auto">estadodo_civil</th>
-                <th class="col-auto">id_estudiante</th>
+                <th class="col-auto">Parentesco</th>
+                <th class="col-auto">Nombre</th>
+                <th class="col-auto">Apellido</th>
+                <th class="col-auto">Cedula</th>
+                <th class="col-auto">Lugar de Nacimiento</th>
+                <th class="col-auto">Fecha de Nacimiento</th>
+                <th class="col-auto">Direccion</th>
+                <th class="col-auto">Tlf. Contacto</th>
+                <th class="col-auto">Lugar de Trabajo</th>
+                <th class="col-auto">Estado</th>
+                <th class="col-auto">Municipio</th>
+                <th class="col-auto">Departamento</th>
+                <th class="col-auto">Estadodo Civil</th>
+                <th class="col-auto">Estudiante</th>
                 
                 <th class="col-auto">Acciones</th>
             
@@ -75,7 +75,7 @@
           </table>
 
         </div>
-        <button class="btn btn-outline-info btn-sm" onclick="toggleSeccion()">Mostrar</button> 
+        <button class="btn btn-outline-info btn-sm" onclick="toggleSeccion()">Mostrar/Ocultar</button> 
        
 
     </div>

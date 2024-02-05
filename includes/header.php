@@ -49,9 +49,9 @@
               </a>
 
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Citas</a></li>
-                <li><a class="dropdown-item" href="#">Discapacidades</a></li>
-                <li><a class="dropdown-item" href="#">Historial Medico</a></li>
+                <li><a class="dropdown-item" href="/UNIPDIS/citas.php">Citas</a></li>
+                <li><a class="dropdown-item" href="/UNIPDIS/discapacidades.php">Discapacidades</a></li>
+                <li><a class="dropdown-item" href="/UNIPDIS/historial_medico.php">Historial Medico</a></li>
               </ul>
 
         </ul>
