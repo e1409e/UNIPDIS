@@ -7,7 +7,7 @@
     <!-- AGREGAR NUEVOS ESTUDIANTES -->
 
 
-<div class="container">
+<div class="container-fluid">
 <h2 class="mt-5">Agregar Nuevos Estudiantes</h2> 
   <div class="card card-body">
      <form action="includes/save.php" method="POST">
@@ -38,7 +38,7 @@
         </div>
 
             <h6 for="opciones">Periodo:</h6>
-                <select name="periodo" id="periodo">
+                <select class="form-select" aria-label="Default select example" name="periodo" id="periodo">
                    <option value="periodo">Seleccione un periodo</option>
                     <?php
                   // Conexión a la base de datos
@@ -60,7 +60,7 @@
             
 
             <h6 for="opciones">Facultades:</h6>
-                <select name="facultades" id="facultades">
+                <select class="form-select" aria-label="Default select example" name="facultades" id="facultades">
                    <option value="facultad">Seleccione una Facultad</option>
                     <?php
                   // Conexión a la base de datos
@@ -81,7 +81,7 @@
                 </select>
 
             <h6 for="opciones">Carreras:</h6>
-                <select name="carrera" id="carrera">
+                <select class="form-select" aria-label="Default select example" name="carrera" id="carrera">
                    <option value="carrera">Seleccione una carrera</option>
                     <?php
                   // Conexión a la base de datos
@@ -120,7 +120,7 @@
         </div>
  -->
         <h6 for="opciones">Discapacidad:</h6>
-                <select name="discapacidad" id="discapacidad">
+                <select class="form-select" aria-label="Default select example" name="discapacidad" id="discapacidad">
                    <option value="discapacidad">Seleccione una discapacidad</option>
                     <?php
                   // Conexión a la base de datos
