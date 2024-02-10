@@ -1,8 +1,9 @@
-<?php  include("includes/connect.php") ?>
-<?php include("includes/header.php") ?>
+<?php  include("connect.php") ?>
+<?php include("header.php") ?>
 
 <br>
-<div class="container-fluid">
+<br>
+<div class="container w-75">
   <h2 class="mt-5">Estudiantes</h2>
   <div class="card card-body"> 
     
@@ -14,6 +15,7 @@
           <table class="table rounded table-hover table-bordered  table-lg mb-5">
             <thead>
               <tr>
+                <th class="col-auto">ID</th>
                 <th class="col-auto">Nombre</th>
                 <th class="col-auto">Apellido</th>
                 <th class="col-auto">Cedula</th>
@@ -36,7 +38,7 @@
             <tbody>
               <!-- Aquí iría el contenido de la base de datos -->
               <?php 
-                include("includes/connect.php");
+                include("connect.php");
                 $select = "SELECT * FROM Estudiantes";
                 $resultados = mysqli_query($conn, $select);
 
@@ -44,6 +46,7 @@
                   <tr>
                     <!-- columnas de la tabla en mysql-->
 
+                    <td><?php echo $row['id_estudiante'] ?></td>
                     <td><?php echo $row['nombres'] ?></td>
                     <td><?php echo $row['apellidos'] ?></td>
                     <td><?php echo $row['cedula'] ?></td>
@@ -63,8 +66,10 @@
 
                     <!--Botones de acciones-->
                       <td>
-                        <a href="includes/edit.php?id=" class="btn btn-secondary">A</a>
-                        <a href="includes/delete.php?id=" class="btn btn-danger">B</a>
+                        <div>
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
+                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                        </div>
                       </td> 
                   </tr>
 
@@ -75,14 +80,16 @@
           </table>
 
         </div>
+        
         <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> 
        
 
     </div>
   </div>
-     
-</div> 
+   
+</div>
 
 
-<?php include("includes/Agreg_Estudiantes.php") ?>
-<?php include("includes/footer.php") ?>
+
+<?php include("Agreg_Estudiantes.php") ?>
+<?php include("footer.php") ?>

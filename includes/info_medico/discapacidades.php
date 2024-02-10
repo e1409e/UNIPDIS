@@ -1,5 +1,5 @@
-<?php  include("includes/connect.php") ?>
-<?php include("includes/header.php") ?>
+<?php  include("../connect.php") ?>
+<?php include("../header.php") ?>
 
 <br>
 <div class="container-fluid">
@@ -22,7 +22,7 @@
             <tbody>
               <!-- Aquí iría el contenido de la base de datos -->
               <?php 
-                include("includes/connect.php");
+                include("../connect.php");
                 $select = "SELECT * FROM discapacidad";
                 $resultados = mysqli_query($conn, $select);
 
@@ -35,8 +35,8 @@
 
                     <!--Botones de acciones-->
                       <td>
-                        <a href="includes/edit.php?id=" class="btn btn-secondary">Editar</a>
-                        <a href="includes/delete.php?id=" class="btn btn-danger">Eliminar</a>
+                        <a href="../edit.php?id=" class="btn btn-secondary">Editar</a>
+                        <a href="../delete.php?id=" class="btn btn-danger">Eliminar</a>
                       </td> 
                   </tr>
 
@@ -57,4 +57,4 @@
 
 
 
-<?php include("includes/footer.php") ?>
+<?php include("../footer.php") ?>

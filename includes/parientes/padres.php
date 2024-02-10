@@ -1,8 +1,10 @@
-<?php  include("includes/connect.php") ?>
-<?php include("includes/header.php") ?>
+<?php include("../header.php");?>
+<?php  include("../connect.php");?>
+
 
 <br>
-<div class="container-fluid">
+<br>
+<div class="container W-100">
   <h2 class="mt-5">Padres</h2>
   <div class="card card-body"> 
     
@@ -36,7 +38,7 @@
             <tbody>
               <!-- Aquí iría el contenido de la base de datos -->
               <?php 
-                include("includes/connect.php");
+                include("../connect.php");
                 $select = "SELECT * FROM padres";
                 $resultados = mysqli_query($conn, $select);
 
@@ -63,8 +65,8 @@
 
                     <!--Botones de acciones-->
                       <td>
-                        <a href="includes/edit.php?id=" class="btn btn-secondary">A</a>
-                        <a href="includes/delete.php?id=" class="btn btn-danger">B</a>
+                        <a href="../edit.php?id=" class="btn btn-secondary">A</a>
+                        <a href="../delete.php?id=" class="btn btn-danger">B</a>
                       </td> 
                   </tr>
 
@@ -85,4 +87,4 @@
 
 
 
-<?php include("includes/footer.php") ?>
+<?php include("../footer.php");?>

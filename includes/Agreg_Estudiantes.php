@@ -7,10 +7,10 @@
     <!-- AGREGAR NUEVOS ESTUDIANTES -->
 
 
-<div class="container-fluid">
+<div class="container w-75">
 <h2 class="mt-5">Agregar Nuevos Estudiantes</h2> 
   <div class="card card-body">
-     <form action="includes/save.php" method="POST">
+     <form action="/UNIPDIS/includes/save_estudiantes.php" method="POST">
        
         <h6>Nombre del Estudiante</h6>
         <div class="form-group">

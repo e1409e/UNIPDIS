@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-02-2024 a las 22:49:49
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 10-02-2024 a las 06:48:42
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,6 +64,14 @@ CREATE TABLE `citas` (
   `motivo_cita` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`id_citas`, `id_estudiante`, `fecha_cita`, `motivo_cita`) VALUES
+(1, 1, '2024-01-10', 'consulta mensual'),
+(3, 2, '2024-02-12', 'Mareos durante las clases');
+
 -- --------------------------------------------------------
 
 --
@@ -107,6 +115,14 @@ CREATE TABLE `estudiantes` (
   `seguimiento` text DEFAULT NULL,
   `fecha_registro` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`id_estudiante`, `nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `periodo_id`, `facultad_id`, `carrera_id`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES
+(1, 'Eric', 'Chaparro', '30474879', '0412-8792562', 'ericchaparro879@ujgh.edu.ve', 1, 2, 2, 'Jose Miguel', '0424-6598123', 2, 22, 'normal', 'normal', '2023-05-22'),
+(2, 'Antonio', 'Lopez', '29356879', '0412-5687912', 'antoniolopez879@ujgh.edu.ve', 1, 1, 1, 'Juliana vargas', '0414-7894532', 1, 25, 'anormal', 'anormal', '2024-06-13');
 
 -- --------------------------------------------------------
 
@@ -304,7 +320,7 @@ ALTER TABLE `carrera`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `id_citas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_citas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `discapacidad`
@@ -316,7 +332,7 @@ ALTER TABLE `discapacidad`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `facultad`

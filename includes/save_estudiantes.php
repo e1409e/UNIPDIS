@@ -32,13 +32,13 @@
             die("Query failed");
 
          }
-        // echo 'saved';
+        echo 'saved';
         // echo $query;
 
 
-        $_SESSION['mensaje'] = 'Tarea Guardada';
-        $_SESSION['mensaje_tipo'] = 'success';
-        header("Location: index.php");  
+        // $_SESSION['mensaje'] = 'Tarea Guardada';
+        // $_SESSION['mensaje_tipo'] = 'success';
+        // header("Location: index.php");  
     }
 ?>
 
