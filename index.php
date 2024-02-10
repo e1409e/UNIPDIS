@@ -7,10 +7,7 @@
 <div class="container-fluid">
   <h2 class="mt-5">Facultades</h2>
   <div class="card card-body"> 
-    
-
     <div class="table-responsive" > 
-        <div id="seccionOculta" style="display: none;">
           <table class="table rounded table-hover table-bordered  table-lg mb-5">
             <thead>
               <tr>
@@ -39,11 +36,6 @@
 
             </tbody>
           </table>
-
-        </div>
-
-        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> 
-       
     </div>
   </div>   
 </div> 
@@ -57,7 +49,7 @@
     
 
     <div class="table-responsive" > 
-        <!-- <div id="seccionOculta" style="display: none;"> -->
+        
           <table class="table rounded table-hover table-bordered  table-lg mb-5">
             <thead>
               <tr>
@@ -86,12 +78,9 @@
             
             </tbody>
           </table>
-        <!-- </div>
-
-        <button class="btn btn-primary btn-sm" onclick="toggleSeccion()">Mostrar</button>  -->
-       
     </div>
   </div>
+
 </div>
 
 

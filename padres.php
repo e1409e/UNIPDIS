@@ -26,7 +26,7 @@
                 <th class="col-auto">Estado</th>
                 <th class="col-auto">Municipio</th>
                 <th class="col-auto">Departamento</th>
-                <th class="col-auto">Estadodo Civil</th>
+                <th class="col-auto">Estado Civil</th>
                 <th class="col-auto">Estudiante</th>
                 
                 <th class="col-auto">Acciones</th>

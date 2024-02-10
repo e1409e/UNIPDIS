@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar fixed-top navbar-expand-lg bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand">
       <img src="img/logoUJGH.png" alt="Logo" width="165" class="d-inline-block align-text-center">
@@ -40,8 +40,8 @@
               </a>
 
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/UNIPDIS/padres.php">Familiares</a></li>
-                <li><a class="dropdown-item" href="/UNIPDIS/otros_parientes.php">Otros Parientes</a></li>
+                <li><a class="dropdown-item" href="UNIPDIS/pest/padres.php">Familiares</a></li>
+                <li><a class="dropdown-item" href="UNIPDIS/pest/otros_parientes.php">Otros Parientes</a></li>
               </ul>
                       <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -38,7 +38,7 @@
         </div>
 
             <h6 for="opciones">Periodo:</h6>
-                <select class="form-select" aria-label="Default select example" name="periodo" id="periodo">
+                <select class="form-select" aria-label="Default select example" name="periodo_id" id="periodo">
                    <option value="periodo">Seleccione un periodo</option>
                     <?php
                   // Conexión a la base de datos
@@ -60,8 +60,8 @@
             
 
             <h6 for="opciones">Facultades:</h6>
-                <select class="form-select" aria-label="Default select example" name="facultades" id="facultades">
-                   <option value="facultad">Seleccione una Facultad</option>
+                <select class="form-select" aria-label="Default select example" name="facultades_id" id="facultades">
+                   <option value="default">Seleccione una Facultad</option>
                     <?php
                   // Conexión a la base de datos
                   $conexion = mysqli_connect("localhost", "root", "", "unipdis");
@@ -81,7 +81,7 @@
                 </select>
 
             <h6 for="opciones">Carreras:</h6>
-                <select class="form-select" aria-label="Default select example" name="carrera" id="carrera">
+                <select class="form-select" aria-label="Default select example" name="carrera_id" id="carrera">
                    <option value="carrera">Seleccione una carrera</option>
                     <?php
                   // Conexión a la base de datos
@@ -105,12 +105,12 @@
        
         <h6>Nombre del contacto</h6>
         <div class="form-group">
-            <input type="text" name="nomb_contacto" class="form-control">
+            <input type="text" name="nombre_contacto" class="form-control">
         </div>
 
         <h6>Telefono del contacto</h6>
         <div class="form-group">
-            <input type="text" name="tlf_contacto" class="form-control">
+            <input type="text" name="telefono_contacto" class="form-control">
         </div>
 
 
@@ -120,7 +120,7 @@
         </div>
  -->
         <h6 for="opciones">Discapacidad:</h6>
-                <select class="form-select" aria-label="Default select example" name="discapacidad" id="discapacidad">
+                <select class="form-select" aria-label="Default select example" name="discapacidad_id" id="discapacidad">
                    <option value="discapacidad">Seleccione una discapacidad</option>
                     <?php
                   // Conexión a la base de datos
@@ -161,7 +161,7 @@
         <h6>Fecha de Registro</h6>
         <div class="form-group">
 
-            <input type="text" name="Fecha_registro" class="form-control">
+            <input type="text" name="fecha_registro" class="form-control">
             
 
         </div>

@@ -10,13 +10,13 @@
         $cedula = $_POST['cedula'];
         $telefono = $_POST['telefono'];
         $correo = $_POST['correo'];
-        $periodo = $_POST['periodo'];
-        $facultades = $_POST['facultades'];
-        $carreras = $_POST['carrera'];
-        $nomb_contacto = $_POST['nomb_contacto'];
-        $tlf_contacto = $_POST['tlf_contacto'];
+        $periodo = $_POST['periodo_id'];
+        $facultades = $_POST['facultades_id'];
+        $carrera = $_POST['carrera_id'];
+        $nomb_contacto = $_POST['nombre_contacto'];
+        $tlf_contacto = $_POST['telefono_contacto'];
 
-        $discapacidad = $_POST['discapacidad'];
+        $discapacidad = $_POST['discapacidad_id'];
         $edad = $_POST['edad'];
        
         $observaciones = $_POST['observaciones'];
@@ -24,20 +24,21 @@
         $fecha_registro = $_POST['fecha_registro'];
         
 
-        // $query = "INSERT INTO censo(nombres, apellidos, cedula, carrera, telefono, correo, num_telf, discapacidad, edad, certificado_conapdis, observaciones, seguimiento, year_) VALUES ('$nombre', '$apellido', '$cedula', '$carrera', '$telefono', '$correo', '$num_tlf', '$discapacidad', '$edad', '$certificado_conapdis', '$observaciones', '$seguimiento', '$fecha_registro')";
+        $query = "INSERT INTO `estudiantes` (`nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `periodo_id`, `facultad_id`, `carrera_id`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES ('$nombre', '$apellido', '$cedula', '$telefono', '$correo', '$periodo', '$facultades', '$carrera', '$nomb_contacto', '$tlf_contacto', '$discapacidad', '$edad', '$observaciones', '$seguimiento', '$fecha_registro');";
         
         $result = mysqli_query($conexion, $query);
 
         if(!$result){
             die("Query failed");
 
-        }
-        echo 'saved';
-        
+         }
+        // echo 'saved';
+        // echo $query;
 
-        /* $_SESSION['mensaje'] = 'Tarea Guardada';
+
+        $_SESSION['mensaje'] = 'Tarea Guardada';
         $_SESSION['mensaje_tipo'] = 'success';
-        header("Location: index.php");  */
+        header("Location: index.php");  
     }
 ?>
 
