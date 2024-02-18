@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Censo para estudiantes con discapacidad</title>
 
     <!--BOOTSTRAP-->
@@ -15,7 +16,7 @@
 </head>
 <body>
 
-<nav class="navbar fixed-top navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand">
       <img src="/UNIPDIS/img/logoUJGH.png" alt="Logo" width="165" class="img-fluid d-inline-block align-text-center">
@@ -32,6 +33,10 @@
 
             <li class="nav-item">
               <a class="nav-link" href="/UNIPDIS/includes/Estudiantes.php">Estudiantes</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/UNIPDIS/includes/registrar/registro.php">Registrar</a>
             </li>
 
             <li class="nav-item dropdown">

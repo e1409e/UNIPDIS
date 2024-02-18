@@ -10,9 +10,7 @@
         $cedula = $_POST['cedula'];
         $telefono = $_POST['telefono'];
         $correo = $_POST['correo'];
-        $periodo = $_POST['periodo_id'];
-        $facultades = $_POST['facultades_id'];
-        $carrera = $_POST['carrera_id'];
+        
         $nomb_contacto = $_POST['nombre_contacto'];
         $tlf_contacto = $_POST['telefono_contacto'];
 
@@ -24,7 +22,7 @@
         $fecha_registro = $_POST['fecha_registro'];
         
 
-        $query = "INSERT INTO `estudiantes` (`nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `periodo_id`, `facultad_id`, `carrera_id`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES ('$nombre', '$apellido', '$cedula', '$telefono', '$correo', '$periodo', '$facultades', '$carrera', '$nomb_contacto', '$tlf_contacto', '$discapacidad', '$edad', '$observaciones', '$seguimiento', '$fecha_registro');";
+        $query = "INSERT INTO `estudiantes` (`nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES ('$nombre', '$apellido', '$cedula', '$telefono', '$correo',  '$nomb_contacto', '$tlf_contacto', '$discapacidad', '$edad', '$observaciones', '$seguimiento', '$fecha_registro');";
         
         $result = mysqli_query($conexion, $query);
 

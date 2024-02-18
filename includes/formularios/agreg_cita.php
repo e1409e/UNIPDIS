@@ -10,7 +10,7 @@
 <div class="container w-75">
 <h2 class="mt-5">Agregar Nueva Cita</h2> 
   <div class="card card-body">
-     <form action="/UNIPDIS/includes/save_citas.php" method="POST">
+     <form action="/UNIPDIS/includes/guardados/save_citas.php" method="POST">
        
        
             <h6 for="opciones">Estudiante:</h6>
@@ -49,11 +49,12 @@
 
 
         
+        <br>
             
-
+        <input type="submit" name="Guardar_cita" class="btn btn-success btn-block" value="Guardado">
         </div>
        
-       <input type="submit" name="Guardar_cita" class="btn btn-success btn-block" value="Guardado">
+       
      </form>
    </div>
   </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-02-2024 a las 06:48:42
+-- Tiempo de generación: 18-02-2024 a las 04:35:35
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -48,8 +48,13 @@ CREATE TABLE `carrera` (
 --
 
 INSERT INTO `carrera` (`id_carrera`, `carreras`) VALUES
-(1, 'Contaduria'),
-(2, 'Ing. Sistemas');
+(1, 'Contaduría Pública'),
+(2, 'Ing. Sistemas'),
+(3, 'Administración'),
+(4, 'Gerencia de Recursos Humanos'),
+(5, 'Ing. Computación'),
+(6, 'Educación Preescolar'),
+(7, 'Educación Integral');
 
 -- --------------------------------------------------------
 
@@ -104,9 +109,6 @@ CREATE TABLE `estudiantes` (
   `cedula` varchar(10) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `correo` varchar(50) DEFAULT NULL,
-  `periodo_id` int(11) NOT NULL,
-  `facultad_id` int(11) NOT NULL,
-  `carrera_id` int(11) NOT NULL,
   `nombre_contacto` varchar(50) NOT NULL,
   `telefono_contacto` varchar(15) DEFAULT NULL,
   `discapacidad_id` int(11) NOT NULL,
@@ -120,9 +122,10 @@ CREATE TABLE `estudiantes` (
 -- Volcado de datos para la tabla `estudiantes`
 --
 
-INSERT INTO `estudiantes` (`id_estudiante`, `nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `periodo_id`, `facultad_id`, `carrera_id`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES
-(1, 'Eric', 'Chaparro', '30474879', '0412-8792562', 'ericchaparro879@ujgh.edu.ve', 1, 2, 2, 'Jose Miguel', '0424-6598123', 2, 22, 'normal', 'normal', '2023-05-22'),
-(2, 'Antonio', 'Lopez', '29356879', '0412-5687912', 'antoniolopez879@ujgh.edu.ve', 1, 1, 1, 'Juliana vargas', '0414-7894532', 1, 25, 'anormal', 'anormal', '2024-06-13');
+INSERT INTO `estudiantes` (`id_estudiante`, `nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES
+(1, 'Eric', 'Chaparro', '30474879', '0412-8792562', 'ericchaparro879@ujgh.edu.ve', 'Jose Miguel', '0424-6598123', 2, 22, 'normal', 'normal', '2023-05-22'),
+(2, 'Antonio', 'Lopez', '29356879', '0412-5687912', 'antoniolopez879@ujgh.edu.ve', 'Juliana vargas', '0414-7894532', 1, 25, 'anormal', 'anormal', '2024-06-13'),
+(3, 'Jose', 'Peréz', '26497516', '0424-6547823', 'joseperéz823@ujgh.edu.ve', 'Juan Peréz', '0416-7531937', 1, 26, 'casi normal', 'casi normal', '2022-03-05');
 
 -- --------------------------------------------------------
 
@@ -132,16 +135,18 @@ INSERT INTO `estudiantes` (`id_estudiante`, `nombres`, `apellidos`, `cedula`, `t
 
 CREATE TABLE `facultad` (
   `id_facultad` int(11) NOT NULL,
-  `facultades` varchar(50) NOT NULL
+  `facultades` varchar(50) NOT NULL,
+  `Siglas` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `facultad`
 --
 
-INSERT INTO `facultad` (`id_facultad`, `facultades`) VALUES
-(1, 'Humanidades'),
-(2, 'ingenieria');
+INSERT INTO `facultad` (`id_facultad`, `facultades`, `Siglas`) VALUES
+(1, 'Humanidades, Arte y Educación', 'FHAE'),
+(2, 'Ingeniería ', 'FING'),
+(3, 'Ciencias Económicas y Sociales', 'FACES');
 
 -- --------------------------------------------------------
 
@@ -198,7 +203,7 @@ CREATE TABLE `otros_parientes` (
 
 CREATE TABLE `padres` (
   `id_padres` int(11) NOT NULL,
-  `tipo_padre` enum('M','P') NOT NULL,
+  `tipo_familiar` varchar(20) NOT NULL,
   `nombre_padre` varchar(30) NOT NULL,
   `apellido_padre` varchar(40) NOT NULL,
   `cedula_padre` int(11) NOT NULL,
@@ -213,6 +218,14 @@ CREATE TABLE `padres` (
   `estadodo_civil` varchar(20) NOT NULL,
   `id_estudiante` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `padres`
+--
+
+INSERT INTO `padres` (`id_padres`, `tipo_familiar`, `nombre_padre`, `apellido_padre`, `cedula_padre`, `lugar_nacimiento`, `fecha_nacimiento`, `direccion_habitacion`, `telefono_contacto`, `lugar_trabajo`, `estado`, `municipio`, `departamento`, `estadodo_civil`, `id_estudiante`) VALUES
+(1, 'padre', 'Ramón', 'Perez', 154678945, 'Caracas, Hospital 1', '1995-06-22', 'Direccion de Ejemplo 1', '0412-8794397', 'Alimentos Polar', 'Zulia', 'San Francisco', 'Departamento de ejemplo', 'Casado', 3),
+(2, 'Madre', 'Paola', 'Lopez', 14568791, 'Carabobo', '1995-02-15', 'Direccion de Ejemplo', '0416-3574612', 'Gran Bazar', 'Zulia', 'Maracaibo', 'Departamento de ejemplo', 'Soltera', 2);
 
 -- --------------------------------------------------------
 
@@ -231,6 +244,28 @@ CREATE TABLE `periodo` (
 
 INSERT INTO `periodo` (`id_periodo`, `periodos`) VALUES
 (1, 'PAR-I-2024');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `universidad`
+--
+
+CREATE TABLE `universidad` (
+  `id_estudiante` int(11) NOT NULL,
+  `carrera_id` int(11) NOT NULL,
+  `facultad_id` int(11) NOT NULL,
+  `periodo_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `universidad`
+--
+
+INSERT INTO `universidad` (`id_estudiante`, `carrera_id`, `facultad_id`, `periodo_id`) VALUES
+(1, 2, 2, 1),
+(2, 3, 3, 1),
+(3, 6, 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -260,10 +295,7 @@ ALTER TABLE `discapacidad`
 --
 ALTER TABLE `estudiantes`
   ADD PRIMARY KEY (`id_estudiante`),
-  ADD KEY `periodo_id` (`periodo_id`),
-  ADD KEY `carrera_id` (`carrera_id`),
-  ADD KEY `discapacidad_id` (`discapacidad_id`),
-  ADD KEY `facultad_id` (`facultad_id`);
+  ADD KEY `discapacidad_id` (`discapacidad_id`);
 
 --
 -- Indices de la tabla `facultad`
@@ -307,6 +339,15 @@ ALTER TABLE `periodo`
   ADD PRIMARY KEY (`id_periodo`);
 
 --
+-- Indices de la tabla `universidad`
+--
+ALTER TABLE `universidad`
+  ADD KEY `carrera_id` (`carrera_id`),
+  ADD KEY `facultad_id` (`facultad_id`),
+  ADD KEY `periodo_id` (`periodo_id`),
+  ADD KEY `id_estudiante` (`id_estudiante`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -314,7 +355,7 @@ ALTER TABLE `periodo`
 -- AUTO_INCREMENT de la tabla `carrera`
 --
 ALTER TABLE `carrera`
-  MODIFY `id_carrera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_carrera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `citas`
@@ -332,13 +373,13 @@ ALTER TABLE `discapacidad`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_estudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `facultad`
 --
 ALTER TABLE `facultad`
-  MODIFY `id_facultad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_facultad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_medico`
@@ -362,7 +403,7 @@ ALTER TABLE `otros_parientes`
 -- AUTO_INCREMENT de la tabla `padres`
 --
 ALTER TABLE `padres`
-  MODIFY `id_padres` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_padres` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `periodo`
@@ -384,10 +425,7 @@ ALTER TABLE `citas`
 -- Filtros para la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  ADD CONSTRAINT `estudiantes_ibfk_1` FOREIGN KEY (`periodo_id`) REFERENCES `periodo` (`id_periodo`),
-  ADD CONSTRAINT `estudiantes_ibfk_2` FOREIGN KEY (`carrera_id`) REFERENCES `carrera` (`id_carrera`),
-  ADD CONSTRAINT `estudiantes_ibfk_3` FOREIGN KEY (`discapacidad_id`) REFERENCES `discapacidad` (`id_discapacidad`),
-  ADD CONSTRAINT `estudiantes_ibfk_4` FOREIGN KEY (`facultad_id`) REFERENCES `facultad` (`id_facultad`);
+  ADD CONSTRAINT `estudiantes_ibfk_3` FOREIGN KEY (`discapacidad_id`) REFERENCES `discapacidad` (`id_discapacidad`);
 
 --
 -- Filtros para la tabla `historial_medico`
@@ -412,6 +450,15 @@ ALTER TABLE `otros_parientes`
 --
 ALTER TABLE `padres`
   ADD CONSTRAINT `padres_ibfk_1` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`);
+
+--
+-- Filtros para la tabla `universidad`
+--
+ALTER TABLE `universidad`
+  ADD CONSTRAINT `universidad_ibfk_1` FOREIGN KEY (`carrera_id`) REFERENCES `carrera` (`id_carrera`),
+  ADD CONSTRAINT `universidad_ibfk_2` FOREIGN KEY (`facultad_id`) REFERENCES `facultad` (`id_facultad`),
+  ADD CONSTRAINT `universidad_ibfk_3` FOREIGN KEY (`periodo_id`) REFERENCES `periodo` (`id_periodo`),
+  ADD CONSTRAINT `universidad_ibfk_4` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

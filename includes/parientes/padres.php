@@ -5,7 +5,7 @@
 <br>
 <br>
 <div class="container W-100">
-  <h2 class="mt-5">Padres</h2>
+  <h2 class="mt-5">Familiar Directo</h2>
   <div class="card card-body"> 
     
 
@@ -46,7 +46,7 @@
                   <tr>
                     <!-- columnas de la tabla en mysql-->
 
-                    <td><?php echo $row['tipo_padre'] ?></td>
+                    <td><?php echo $row['tipo_familiar'] ?></td>
                     <td><?php echo $row['nombre_padre'] ?></td>
                     <td><?php echo $row['apellido_padre'] ?></td>
                     <td><?php echo $row['cedula_padre'] ?></td>

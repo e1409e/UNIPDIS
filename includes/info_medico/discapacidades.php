@@ -2,7 +2,8 @@
 <?php include("../header.php") ?>
 
 <br>
-<div class="container-fluid">
+<br>
+<div class="container w-75">
   <h2 class="mt-5">Discapacidades</h2>
   <div class="card card-body">
   
@@ -17,6 +18,7 @@
               <tr>
                 <th class="col-auto">ID</th>
                 <th class="col-auto">Discapacidad</th>
+                <th class="col-auto">Acciones</th>
               </tr>
             </thead>
             <tbody>

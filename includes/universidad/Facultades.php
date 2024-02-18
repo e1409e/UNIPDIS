@@ -16,6 +16,7 @@
               <tr>
                 <th class="col-1">ID</th>
                 <th class="col-auto">Facultades</th>
+                 <th class="col-auto">Siglas</th>
                
               </tr>
             </thead>
@@ -32,6 +33,7 @@
 
                     <td><?php echo $row['id_facultad'] ?></td>
                     <td><?php echo $row['facultades'] ?></td>
+                    <td><?php echo $row['Siglas'] ?></td>
                    
                   </tr>
 

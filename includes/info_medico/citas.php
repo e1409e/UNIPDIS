@@ -64,5 +64,5 @@
 </div> 
 
 
-<?php include("../agreg_cita.php") ?>
+
 <?php include("../footer.php") ?>
