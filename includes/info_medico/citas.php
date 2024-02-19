@@ -1,8 +1,7 @@
 <?php  include("../connect.php") ?>
 <?php include("../header.php") ?>
 
-<br>
-<br>
+
 <div class="container w-75">
   <h2 class="mt-5">Citas</h2>
   <div class="card card-body">
@@ -28,7 +27,7 @@
               <!-- Aquí iría el contenido de la base de datos -->
               <?php 
                 include("../connect.php");
-                $select = "SELECT * FROM citas";
+                $select = "SELECT b.id_citas, CONCAT(a.nombres, ' ', a.apellidos, ' C.I: ', a.cedula) AS Estudiante, b.fecha_cita, b.motivo_cita FROM citas b INNER JOIN estudiantes a ON a.id_estudiante = b.id_estudiante;";
                 $resultados = mysqli_query($conn, $select);
 
                 while($row = mysqli_fetch_array($resultados)){ ?>
@@ -36,7 +35,7 @@
                     <!-- columnas de la tabla en mysql-->
 
                     <td><?php echo $row['id_citas'] ?></td>
-                    <td><?php echo $row['id_estudiante'] ?></td>
+                    <td><?php echo $row['Estudiante'] ?></td>
                     <td><?php echo $row['fecha_cita'] ?></td>
                     <td><?php echo $row['motivo_cita'] ?></td>
                     

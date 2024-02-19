@@ -38,12 +38,12 @@
               <!-- Aquí iría el contenido de la base de datos -->
               <?php 
                 include("connect.php");
-                $select = "SELECT estudiantes.*, facultad.Siglas, carrera.carreras, periodo.periodos  
-                           FROM estudiantes 
-                           INNER JOIN universidad ON estudiantes.id_estudiante = universidad.id_estudiante 
-                           JOIN facultad ON universidad.facultad_id = facultad.id_facultad 
-                           JOIN carrera ON universidad.carrera_id = carrera.id_carrera 
-                           JOIN periodo ON universidad.periodo_id = periodo.id_periodo;";
+                $select = "SELECT a.id_estudiante, a.nombres, a.apellidos, a.cedula, a.telefono, a.correo, a.nombre_contacto, a.telefono_contacto, d.discapacidades, a.edad, a.observaciones, a.seguimiento, a.fecha_registro, f.Siglas, c.carreras, p.periodos FROM estudiantes a 
+                  INNER JOIN universidad u ON a.id_estudiante = u.id_estudiante 
+                  JOIN facultad f ON u.facultad_id = f.id_facultad 
+                  JOIN carrera c ON u.carrera_id = c.id_carrera 
+                  JOIN periodo p ON u.periodo_id = p.id_periodo
+                  JOIN discapacidad d ON a.discapacidad_id = d.id_discapacidad;";
                 $resultados = mysqli_query($conn, $select);
 
                 while($row = mysqli_fetch_array($resultados)){ ?>
@@ -58,7 +58,7 @@
                     <td><?php echo $row['correo'] ?></td>
                     <td><?php echo $row['nombre_contacto'] ?></td>
                     <td><?php echo $row['telefono_contacto'] ?></td>
-                    <td><?php echo $row['discapacidad_id'] ?></td>
+                    <td><?php echo $row['discapacidades'] ?></td>
                     <td><?php echo $row['edad'] ?></td>
                     <td><?php echo $row['observaciones'] ?></td>
                     <td><?php echo $row['seguimiento'] ?></td>
