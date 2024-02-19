@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2024 a las 04:35:35
+-- Tiempo de generación: 19-02-2024 a las 06:38:15
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -75,7 +75,8 @@ CREATE TABLE `citas` (
 
 INSERT INTO `citas` (`id_citas`, `id_estudiante`, `fecha_cita`, `motivo_cita`) VALUES
 (1, 1, '2024-01-10', 'consulta mensual'),
-(3, 2, '2024-02-12', 'Mareos durante las clases');
+(3, 2, '2024-02-12', 'Mareos durante las clases'),
+(4, 3, '2024-02-15', 'Cita de rutina');
 
 -- --------------------------------------------------------
 
@@ -158,8 +159,8 @@ CREATE TABLE `historial_medico` (
   `id_historialmedico` int(11) NOT NULL,
   `id_estudiante` int(11) NOT NULL,
   `certificado_conapdis` varchar(2) NOT NULL,
-  `informe_medico` varchar(2) NOT NULL,
-  `tratamiento` varchar(2) NOT NULL
+  `informe_medico` text NOT NULL,
+  `tratamiento` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -176,8 +177,15 @@ CREATE TABLE `incidencias` (
   `donde_incidente` text NOT NULL,
   `descripcion_incidente` text NOT NULL,
   `acuerdos` text NOT NULL,
-  `observaciones` int(11) NOT NULL
+  `observaciones` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `incidencias`
+--
+
+INSERT INTO `incidencias` (`id_incidencia`, `id_estudiante`, `hora_incidente`, `fecha_incidente`, `donde_incidente`, `descripcion_incidente`, `acuerdos`, `observaciones`) VALUES
+(2, 2, '04:00:00', '2023-08-21', 'Laboratorio de fisica', 'Desmayo ', 'ninguno', 'anormal');
 
 -- --------------------------------------------------------
 
@@ -194,6 +202,13 @@ CREATE TABLE `otros_parientes` (
   `ocupacion` varchar(50) NOT NULL,
   `parentesco` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `otros_parientes`
+--
+
+INSERT INTO `otros_parientes` (`id_pariente`, `id_estudiante`, `nombre_pariente`, `apellido_pariente`, `fecha_nacimiento`, `ocupacion`, `parentesco`) VALUES
+(5, 1, 'Jhonatan', ' Guzman', '1992-05-03', 'Programador', 'Tio politico');
 
 -- --------------------------------------------------------
 
@@ -361,7 +376,7 @@ ALTER TABLE `carrera`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `id_citas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_citas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `discapacidad`
@@ -385,19 +400,19 @@ ALTER TABLE `facultad`
 -- AUTO_INCREMENT de la tabla `historial_medico`
 --
 ALTER TABLE `historial_medico`
-  MODIFY `id_historialmedico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_historialmedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
-  MODIFY `id_incidencia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_incidencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `otros_parientes`
 --
 ALTER TABLE `otros_parientes`
-  MODIFY `id_pariente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pariente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `padres`
