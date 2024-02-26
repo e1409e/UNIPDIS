@@ -19,10 +19,10 @@
        
         $observaciones = $_POST['observaciones'];
         $seguimiento = $_POST['seguimiento'];
-        $fecha_registro = $_POST['fecha_registro'];
+       
         
 
-        $query = "INSERT INTO `estudiantes` (`nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`, `fecha_registro`) VALUES ('$nombre', '$apellido', '$cedula', '$telefono', '$correo',  '$nomb_contacto', '$tlf_contacto', '$discapacidad', '$edad', '$observaciones', '$seguimiento', '$fecha_registro');";
+        $query = "INSERT INTO `estudiantes` (`nombres`, `apellidos`, `cedula`, `telefono`, `correo`, `nombre_contacto`, `telefono_contacto`, `discapacidad_id`, `edad`, `observaciones`, `seguimiento`) VALUES ('$nombre', '$apellido', '$cedula', '$telefono', '$correo',  '$nomb_contacto', '$tlf_contacto', '$discapacidad', '$edad', '$observaciones', '$seguimiento');";
         
         $result = mysqli_query($conexion, $query);
 
@@ -30,13 +30,12 @@
             die("Query failed");
 
          }
-        echo 'saved';
+       
         // echo $query;
 
 
-        // $_SESSION['mensaje'] = 'Tarea Guardada';
-        // $_SESSION['mensaje_tipo'] = 'success';
-        // header("Location: index.php");  
+       
+        header("Location: ../formularios/agreg_datos_uni.php");  
     }
 ?>
 

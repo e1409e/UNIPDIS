@@ -9,8 +9,8 @@
     
 
     <div class="table-responsive" > 
-        <div id="seccionOculta" style="display: none;">
-          <table class="table rounded table-hover table-bordered  table-lg mb-5">
+        <!-- <div id="seccionOculta" style="display: none;"> -->
+          <table class="table rounded table-hover table-bordered table-lg mb-5">
             <thead>
               <tr>
                 <th class="col-auto">ID</th>
@@ -19,13 +19,13 @@
                 <th class="col-auto">Cedula</th>
                 <th class="col-auto">telefono</th>
                 <th class="col-auto">Correo</th>  
-                <th class="col-auto">Nomb. contacto</th>
-                <th class="col-auto">Tlf. contacto</th>
+                <th class="text-nowrap col-auto">Nomb. contacto</th>
+                <th class="text-nowrap col-auto">Tlf. contacto</th>
                 <th class="col-auto">Discapacidad</th>
                 <th class="col-auto">Edad</th>
                 <th class="col-auto">Observaciones</th>
                 <th class="col-auto">Seguimiento</th>
-                <th class="col-auto">Fecha de Registro</th>
+                <th class="text-nowrap col-auto">Fecha de Registro</th>
                 <th class="col-auto">Facultad</th>
                 <th class="col-auto">Carrera</th>
                 <th class="col-auto">Periodo</th>
@@ -50,27 +50,27 @@
                   <tr>
                     <!-- columnas de la tabla en mysql-->
 
-                    <td><?php echo $row['id_estudiante'] ?></td>
-                    <td><?php echo $row['nombres'] ?></td>
-                    <td><?php echo $row['apellidos'] ?></td>
-                    <td><?php echo $row['cedula'] ?></td>
-                    <td><?php echo $row['telefono'] ?></td>
-                    <td><?php echo $row['correo'] ?></td>
-                    <td><?php echo $row['nombre_contacto'] ?></td>
-                    <td><?php echo $row['telefono_contacto'] ?></td>
-                    <td><?php echo $row['discapacidades'] ?></td>
-                    <td><?php echo $row['edad'] ?></td>
-                    <td><?php echo $row['observaciones'] ?></td>
-                    <td><?php echo $row['seguimiento'] ?></td>
-                    <td><?php echo $row['fecha_registro'] ?></td>                    
-                    <td><?php echo $row['Siglas'] ?></td>
-                    <td><?php echo $row['carreras'] ?></td>
-                    <td><?php echo $row['periodos'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['id_estudiante'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['nombres'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['apellidos'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['cedula'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['telefono'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['correo'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['nombre_contacto'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['telefono_contacto'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['discapacidades'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['edad'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['observaciones'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['seguimiento'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['fecha_registro'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['Siglas'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['carreras'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['periodos'] ?></td>
                   
 
                     <!--Botones de acciones-->
                       <td>
-                        <div>
+                        <div class="btn-group">
                           <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
                           <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
                         </div>
@@ -83,17 +83,18 @@
             </tbody>
           </table>
 
-        </div>
+        <!-- </div> -->
         
-        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> 
+        <!-- <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> -->
+        <a href="/UNIPDIS/includes/formularios/Agreg_Estudiantes.php" class="btn btn-primary mb-3">Nuevo</a>
+        
+        
        
 
     </div>
   </div>
-   
-</div>
 
-
+  
 
 
 <?php include("footer.php") ?>

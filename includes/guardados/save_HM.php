@@ -20,7 +20,7 @@
             die("Query failed");
 
          }
-        echo 'saved';
+         header("Location: ../info_medico/historial_medico.php");
         // echo $query;
 
 

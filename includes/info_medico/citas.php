@@ -6,20 +6,16 @@
   <h2 class="mt-5">Citas</h2>
   <div class="card card-body">
   
-    
-
-    
-
     <div class="table-responsive" > 
-        <div id="seccionOculta" style="display: none;">
-          <table class="table table-bordered ">
+        <!-- <div id="seccionOculta" style="display: none;"> -->
+          <table class="table table-bordered rounded table-hover table-lg mb-5 ">
             <thead>
               <tr>
-                <th class="col-auto">ID</th>
+                <th class="col-1">ID</th>
                 <th class="col-auto">Estudiante</th>
-                <th class="col-auto">Fecha de la Cita</th>
-                <th class="col-auto">Motivo de la Cita</th>
-                <th class="col-auto">Acciones</th>
+                <th class="text-nowrap col-auto">Fecha de la Cita</th>
+                <th class="text-nowrap col-auto">Motivo de la Cita</th>
+                <th class="col-1">Acciones</th>
             
               </tr>
             </thead>
@@ -34,16 +30,18 @@
                   <tr>
                     <!-- columnas de la tabla en mysql-->
 
-                    <td><?php echo $row['id_citas'] ?></td>
-                    <td><?php echo $row['Estudiante'] ?></td>
-                    <td><?php echo $row['fecha_cita'] ?></td>
-                    <td><?php echo $row['motivo_cita'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['id_citas'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['Estudiante'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['fecha_cita'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['motivo_cita'] ?></td>
                     
 
                     <!--Botones de acciones-->
                       <td>
-                        <a href="../edit.php?id=" class="btn btn-secondary">A</a>
-                        <a href="../delete.php?id=" class="btn btn-danger">B</a>
+                       <div class="btn-group">
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
+                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                        </div>
                       </td> 
                   </tr>
 
@@ -53,8 +51,9 @@
             </tbody>
           </table>
 
-        </div>
-        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>  
+        <!-- </div> -->
+        <!-- <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>   -->
+        <a href="/UNIPDIS/includes/formularios/agreg_cita.php" class="btn btn-primary mb-3">Nuevo</a>
        
 
     </div>

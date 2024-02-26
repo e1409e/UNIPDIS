@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-</head>
-<body>
-    <!-- AGREGAR NUEVOS ESTUDIANTES -->
+<?php include("../header.php") ?>
+<?php  include("../connect.php") ?>
+    <!-- AGREGAR OTROS PARIENTES -->
 
 
 <div class="container w-75">
-<h2 class="mt-5">Agregar Datos del Pariente</h2> 
+<h2 class="mt-5 item-title text-center">Agregar Datos del Pariente</h2> 
   <div class="card card-body">
-     <form action="/UNIPDIS/includes/guardados/save_otros_parientes.php" method="POST">
+     <form action="/UNIPDIS/includes/guardados/save_otros_parientes.php" method="POST" class="row justify-content-center align-items-center">
        
 
-
+            <div class="col-6 mt-2">
             <h6 for="opciones">Estudiante:</h6>
                 <select class="form-select" aria-label="Default select example" name="estudiantes_id" id="estudiantes_uni">
                    <option value="estudiantes_uni">Seleccione un estudiante</option>
@@ -34,37 +30,43 @@
                     mysqli_close($conexion);
                     ?>
                 </select>
+            </div>    
 
-            <h6>Nombre del Pariente</h6>
-            <div class="form-group">
-                <input type="text" name="nomb_pari" class="form-control">
+            
+            <div class="form-group col-6 mt-2">
+                <label for="nomb_pari"><h6>Nombre del Pariente:</h6></label>
+                <input type="text" name="nomb_pari" id="nomb_pari" class="form-control">
             </div>
 
 
-            <h6>Apellido del Pariente</h6>
-            <div class="form-group">
-                <input type="text" name="ape_pari" class="form-control">
+            
+            <div class="form-group col-6 mt-2">
+                <label for="ape_pari"><h6>Apellido del Pariente:</h6></label>
+                <input type="text" name="ape_pari" id="ape_pari" class="form-control">
             </div>
 
-             <h6>Fecha de Nacimiento</h6>
-            <div class="form-group">
-                <input type="text" name="fechnac_pari" class="form-control">
+            
+            <div class="form-group col-6 mt-2">
+                <label for="fechnac_pari"><h6>Fecha de Nacimiento:</h6></label>
+                <input type="text" name="fechnac_pari" id="fechnac_pari" class="form-control">
             </div>
 
 
-            <h6>Ocupación</h6>
-            <div class="form-group">
-                <input type="text" name="ocupacion" class="form-control">
+            
+            <div class="form-group col-6 mt-2">
+                <label for="ocupacion"><h6>Ocupación:</h6></label>
+                <input type="text" name="ocupacion" id="ocupacion" class="form-control">
             </div>
 
-            <h6>Parentesco</h6>
-            <div class="form-group">
-                <input type="text" name="Parent_otro" class="form-control">
+            
+            <div class="form-group col-6 mt-2">
+                <label for="Parent_otro"><h6>Parentesco:</h6></label>
+                <input type="text" name="Parent_otro" id="Parent_otro" class="form-control">
             </div>
 
             <br>
             <br>
-            <input type="submit" name="Guardar_otros_parientes" class="btn btn-success btn-block" value="Guardado">
+            <input type="submit" name="Guardar_otros_parientes" class="btn btn-success btn-block col-2 mt-3" value="Guardado">
 
         </div>
        
@@ -74,5 +76,4 @@
   </div>
 
 
-</body>
-</html>
+<?php include("../footer.php") ?>

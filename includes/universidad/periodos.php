@@ -2,9 +2,8 @@
 <?php  include("../connect.php") ?>
 
 <!-- PERIODOS -->
-<br>
-<br>
-<div class="container w-100">
+
+<div class="container w-75">
   <h2 class="mt-5">Periodos</h2>
   <div class="card card-body"> 
     
@@ -14,8 +13,11 @@
           <table class="table rounded table-hover table-bordered  table-lg mb-5">
             <thead>
               <tr>
-                <th class="col-1">ID</th>
-                <th class="col-auto">Periodos</th>
+                <th class="text-nowrap col-1">ID</th>
+                <th class="text-nowrap col-auto">Periodos</th>
+                <th class="col-1">Acciones</th>
+
+
               </tr>
             </thead>
             <tbody>
@@ -31,6 +33,14 @@
 
                     <td><?php echo $row['id_periodo'] ?></td>
                     <td><?php echo $row['periodos'] ?></td>
+
+                    <!--Botones de acciones-->
+                      <td>
+                        <div class="btn-group">
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
+                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                        </div>
+                      </td> 
                    
                   </tr>
 
@@ -42,6 +52,7 @@
         <!-- </div>
 
         <button class="btn btn-primary btn-sm" onclick="toggleSeccion()">Mostrar</button>  -->
+        <a href="/UNIPDIS/includes/formularios/agreg_periodo.php" class="btn btn-primary mb-3">Nuevo</a>
        
     </div>
   </div>

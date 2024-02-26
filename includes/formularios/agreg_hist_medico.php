@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-</head>
-<body>
-    <!-- AGREGAR NUEVOS ESTUDIANTES -->
+<?php include("../header.php") ?>
+<?php  include("../connect.php") ?>
+
+    <!-- AGREGAR HISTORIAL MEDICO -->
 
 
 <div class="container w-75">
-<h2 class="mt-5">Agregar Historial Medico</h2> 
+<h2 class="mt-5 item-title text-center">Agregar Historial Medico</h2> 
   <div class="card card-body">
-     <form action="/UNIPDIS/includes/guardados/save_HM.php" method="POST">
+     <form action="/UNIPDIS/includes/guardados/save_HM.php" method="POST" class="row justify-content-center align-items-center">
        
 
-
+            <div class="col-6 mt-2">
             <h6 for="opciones">Estudiante:</h6>
                 <select class="form-select" aria-label="Default select example" name="estudiantes_id" id="estudiantes_uni">
                    <option value="estudiantes_uni">Seleccione un estudiante</option>
@@ -34,26 +31,31 @@
                     mysqli_close($conexion);
                     ?>
                 </select>
+            </div>    
 
-            <h6>¿Posee Certificado del Conapdis?</h6>
-            <div class="form-group">
-                <input type="text" name="conapdis" class="form-control">
+         
+            <div class="form-group col-6 mt-2">
+                <label for="conapdis"><h6>¿Posee Certificado del Conapdis?:</h6></label>
+                <input type="text" name="conapdis" id="conapdis" class="form-control">
             </div>
 
 
-            <h6>Agregar Informe Medico</h6>
-            <div class="form-group">
-                <input type="text" name="inf_med" class="form-control">
+     
+            <div class="form-group col-12 mt-2">
+                <label for="inf_med"><h6>Agregar Informe Medico:</h6></label>
+                <textarea name="inf_med" id="inf_med" rows="4" class="form-control"></textarea>
             </div>
 
-             <h6>Tratamiento</h6>
+        
             <div class="form-group">
-                <input type="text" name="tratamiento" class="form-control">
+                <label for="tratamiento"><h6>Tratamiento:</h6></label>
+                <textarea name="tratamiento" id="tratamiento" rows="2" class="form-control"></textarea>
+               
             </div>
 
             <br>
             <br>
-            <input type="submit" name="Guardar_HM" class="btn btn-success btn-block" value="Guardado">
+            <input type="submit" name="Guardar_HM" class="btn btn-success btn-block col-2 mt-3" value="Guardado">
 
         </div>
        
@@ -63,5 +65,4 @@
   </div>
 
 
-</body>
-</html>
+<?php include("../footer.php") ?>

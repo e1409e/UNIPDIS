@@ -1,24 +1,20 @@
 <?php  include("../connect.php") ?>
 <?php include("../header.php") ?>
 
-<br>
-<br>
+
 <div class="container w-75">
   <h2 class="mt-5">Discapacidades</h2>
   <div class="card card-body">
-  
-    
-
     
 
     <div class="table-responsive" > 
-        <div id="seccionOculta" style="display: none;">
-          <table class="table table-bordered ">
+        <!-- <div id="seccionOculta" style="display: none;"> -->
+          <table class="table table-bordered rounded table-hover table-lg mb-5">
             <thead>
               <tr>
-                <th class="col-auto">ID</th>
+                <th class="col-1">ID</th>
                 <th class="col-auto">Discapacidad</th>
-                <th class="col-auto">Acciones</th>
+                <th class="col-1">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -37,8 +33,10 @@
 
                     <!--Botones de acciones-->
                       <td>
-                        <a href="../edit.php?id=" class="btn btn-secondary">Editar</a>
-                        <a href="../delete.php?id=" class="btn btn-danger">Eliminar</a>
+                        <div class="btn-group">
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
+                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                        </div>
                       </td> 
                   </tr>
 
@@ -48,8 +46,9 @@
             </tbody>
           </table>
 
-        </div>
-        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>  
+        <!-- </div>
+        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>   -->
+        <a href="/UNIPDIS/includes/formularios/agreg_discapacidad.php" class="btn btn-primary mb-3">Nuevo</a>
        
 
     </div>

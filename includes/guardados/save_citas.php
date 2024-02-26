@@ -1,3 +1,4 @@
+
 <?php 
  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
 
@@ -19,12 +20,14 @@
             die("Query failed");
 
          }
-        echo 'saved';
-        // echo $query;
+        
+        header("Location: ../info_medico/citas.php");
+        
 
 
-        // $_SESSION['mensaje'] = 'Tarea Guardada';
-        // $_SESSION['mensaje_tipo'] = 'success';
+       
         // header("Location: index.php");  
     }
+
+    
 ?>

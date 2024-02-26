@@ -8,18 +8,18 @@
   <div class="card card-body">
   
     <div class="table-responsive" > 
-        <div id="seccionOculta" style="display: none;">
-          <table class="table table-bordered ">
+        <!-- <div id="seccionOculta" style="display: none;"> -->
+          <table class="table table-bordered rounded table-hover table-lg mb-5">
             <thead>
               <tr>
                  <th class="col-auto">ID</th>
-                <th class="col-auto">Estudiante</th>
+                <th class="text-nowrap col-auto">Estudiante</th>
                 <th class="col-auto">Nombre</th>
                 <th class="col-auto">Apellido</th>
-                <th class="col-auto">Fecha de Nacimiento</th>
+                <th class="text-nowrap col-auto">Fecha de Nacimiento</th>
                 <th class="col-auto">Ocupacion</th>
                 <th class="col-auto">Parentesco</th>
-                <th class="col-auto">Acciones</th>
+                <th class="col-1">Acciones</th>
             
               </tr>
             </thead>
@@ -34,21 +34,23 @@
                   <tr>
                     <!-- columnas de la tabla en mysql-->
 
-                    <td><?php echo $row['id_pariente'] ?></td>
-                    <td><?php echo $row['Estudiante'] ?></td>
-                    <td><?php echo $row['nombre_pariente'] ?></td>
-                    <td><?php echo $row['apellido_pariente'] ?></td>
-                    <td><?php echo $row['fecha_nacimiento'] ?></td>
-                    <td><?php echo $row['ocupacion'] ?></td>
-                    <td><?php echo $row['parentesco'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['id_pariente'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['Estudiante'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['nombre_pariente'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['apellido_pariente'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['fecha_nacimiento'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['ocupacion'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['parentesco'] ?></td>
                     
                     
                   
 
                     <!--Botones de acciones-->
                       <td>
-                        <a href="../edit.php?id=" class="btn btn-secondary">A</a>
-                        <a href="../delete.php?id=" class="btn btn-danger">B</a>
+                        <div class="btn-group">
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
+                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                        </div>
                       </td> 
                   </tr>
 
@@ -57,10 +59,10 @@
             
             </tbody>
           </table>
-
+<!-- 
         </div>
-        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>  
-       
+        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>   -->
+        <a href="/UNIPDIS/includes/formularios/agreg_otros_parientes.php" class="btn btn-primary mb-3">Nuevo</a>
 
     </div>
   </div>

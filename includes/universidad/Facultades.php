@@ -5,9 +5,8 @@
 
 
 <!-- FACULTADES -->
-<br>
-<br>
-<div class="container w-100">
+
+<div class="container w-75">
   <h2 class="mt-5">Facultades</h2>
   <div class="card card-body"> 
     <div class="table-responsive" > 
@@ -15,8 +14,8 @@
             <thead>
               <tr>
                 <th class="col-1">ID</th>
-                <th class="col-auto">Facultades</th>
-                 <th class="col-auto">Siglas</th>
+                <th class="text-nowrap col-auto">Facultades</th>
+                 <th class="text-nowrap col-auto">Siglas</th>
                
               </tr>
             </thead>

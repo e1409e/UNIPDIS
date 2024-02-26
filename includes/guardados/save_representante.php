@@ -6,8 +6,6 @@
     if (isset($_POST["Guardar_repre"])){
         
         $parentesco = $_POST['parentesco'];
-        $nomb_repre = $_POST['nomb_repre'];
-        $ape_repre = $_POST['ape_repre'];
         $cedula_repre = $_POST['cedula_repre'];
         $lug_naci = $_POST['lug_naci'];
         $fech_naci = $_POST['fech_naci'];
@@ -21,7 +19,7 @@
         $id_estudiante = $_POST['id_estudiante'];
         
 
-        $query = "INSERT INTO `padres` (`tipo_familiar`, `nombre_padre`, `apellido_padre`, `cedula_padre`, `lugar_nacimiento`, `fecha_nacimiento`, `direccion_habitacion`, `telefono_contacto`, `lugar_trabajo`, `estado`, `municipio`, `departamento`, `estadodo_civil`, `id_estudiante`) VALUES ('$parentesco', '$nomb_repre', '$ape_repre', '$cedula_repre', '$lug_naci', '$fech_naci', '$dir_hab', '$telf_cont', '$lug_trab', '$Estado', '$municipio', '$departamento', '$Edo_civil', '$id_estudiante'  );";
+        $query = "INSERT INTO `padres` (`tipo_familiar`, `cedula_padre`, `lugar_nacimiento`, `fecha_nacimiento`, `direccion_habitacion`, `telefono_contacto`, `lugar_trabajo`, `estado`, `municipio`, `departamento`, `estadodo_civil`, `id_estudiante`) VALUES ('$parentesco', '$cedula_repre', '$lug_naci', '$fech_naci', '$dir_hab', '$telf_cont', '$lug_trab', '$Estado', '$municipio', '$departamento', '$Edo_civil', '$id_estudiante'  );";
         
         $result = mysqli_query($conexion, $query);
 
@@ -29,12 +27,11 @@
             die("Query failed");
 
          }
-        echo 'saved';
+         header("Location: ../Estudiantes.php");*/
         // echo $query;
 
 
-        // $_SESSION['mensaje'] = 'Tarea Guardada';
-        // $_SESSION['mensaje_tipo'] = 'success';
+       
         // header("Location: index.php");  
     }
 ?>

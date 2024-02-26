@@ -19,12 +19,12 @@
             die("Query failed");
 
          }
-        echo 'saved';
-        // echo $query;
+         header("Location: ../formularios/agreg_representante.php");  
+        
 
 
         // $_SESSION['mensaje'] = 'Tarea Guardada';
         // $_SESSION['mensaje_tipo'] = 'success';
-        // header("Location: index.php");  
+        
     }
 ?>

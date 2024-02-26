@@ -1,83 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-</head>
-<body>
-    <!-- AGREGAR NUEVOS ESTUDIANTES -->
+<?php include("../header.php") ?>
+<?php  include("../connect.php") ?>
+    <!-- AGREGAR REPRESENTANTE -->
 
 
 <div class="container w-75">
-<h2 class="mt-5">Agregar Representante</h2> 
-  <div class="card card-body">
-     <form action="/UNIPDIS/includes/guardados/save_representante.php" method="POST">
+<h2 class="mt-5 item-title text-center">Agregar Representante</h2> 
+  <div class="card card-body mb-3">
+     <form action="/UNIPDIS/includes/guardados/save_representante.php" method="POST" class="row justify-content-center align-items-center">
        
-        <h6>Parentesco</h6>
-        <div class="form-group">
-            <input type="text" name="parentesco" class="form-control">
+      
+        <div class="form-group col-6 mt-2">
+             <label for="parentesco"><h6>Parentesco:</h6></label>
+            <input type="text" name="parentesco" id="parentesco" class="form-control">
         </div>
 
-        <h6>Nombre del Representante</h6>
-        <div class="form-group">
-            <input type="text" name="nomb_repre" class="form-control">
-        </div>
-
-        <h6>Apellido del Representante</h6>
-        <div class="form-group">
-            <input type="text" name="ape_repre" class="form-control">
-        </div>
-
-        <h6>Cédula del Representante</h6>
-        <div class="form-group">
-            <input type="text" name="cedula_repre" class="form-control">
-        </div>
-
-        <h6>Lugar de Nacimiento</h6>
-        <div class="form-group">
-            <input type="text" name="lug_naci" class="form-control">
-        </div>
-
-        <h6>Fecha de Nacimiento</h6>
-        <div class="form-group">
-            <input type="text" name="fech_naci" class="form-control">
-        </div>
-
-        <h6>Dirección de Habitación</h6>
-        <div class="form-group">
-            <input type="text" name="dir_hab" class="form-control">
-        </div>
-
-        <h6>Telefono de Contacto</h6>
-        <div class="form-group">
-            <input type="text" name="telf_cont" class="form-control">
-        </div>
-
-        <h6>Lugar de Trabajo</h6>
-        <div class="form-group">
-            <input type="text" name="lug_trab" class="form-control">
-        </div>
-
-        <h6>Estado</h6>
-        <div class="form-group">
-            <input type="text" name="Estado" class="form-control">
-        </div>
-
-        <h6>Municipio</h6>
-        <div class="form-group">
-            <input type="text" name="municipio" class="form-control">
-        </div>
-
-        <h6>Departamento</h6>
-        <div class="form-group">
-            <input type="text" name="departamento" class="form-control">
-        </div>
-
-        <h6>Estado Civil</h6>
-        <div class="form-group">
-            <input type="text" name="Edo_civil" class="form-control">
-        </div>
-
-         <h6 for="opciones">Estudiante:</h6>
+        <div class="col-6 mt-2">
+        <h6 for="opciones">Estudiante:</h6>
                 <select class="form-select" aria-label="Default select example" name="id_estudiante" id="Estudiante">
                    <option value="Estudiante">Seleccione un Estudiante</option>
                     <?php
@@ -85,7 +23,7 @@
                   $conexion = mysqli_connect("localhost", "root", "", "unipdis");
 
                   // Consulta a la tabla para obtener las opciones
-                  $consulta = "SELECT id_estudiante, nombres FROM estudiantes";
+                  $consulta = "SELECT id_estudiante,  CONCAT(nombres, ' ', apellidos, ' C.I: ', cedula) AS nombres FROM estudiantes";
                   $resultados = mysqli_query($conexion, $consulta);
 
                   // Recorremos los resultados y creamos las opciones
@@ -97,10 +35,73 @@
                     mysqli_close($conexion);
                     ?>
                 </select>
+        </div>        
+                
+        
+        <div class="form-group col-6 mt-2">
+            <label for="cedula_repre"><h6>Cédula del Representante:</h6></label>
+            <input type="text" name="cedula_repre" id="cedula_repre" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="lug_naci"><h6>Lugar de Nacimiento:</h6></label>
+            <input type="text" name="lug_naci" id="lug_naci" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="fech_naci"><h6>Fecha de Nacimiento:</h6></label>
+            <input type="text" name="fech_naci" id="fech_naci" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="dir_hab"><h6>Dirección de Habitación:</h6></label>
+            <input type="text" name="dir_hab" id="dir_hab" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="telf_cont"><h6>Telefono de Contacto:</h6></label>
+            <input type="text" name="telf_cont" id="telf_cont" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="lug_trab"><h6>Lugar de Trabajo:</h6></label>
+            <input type="text" name="lug_trab" id="lug_trab" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="Estado"><h6>Estado:</h6></label>
+            <input type="text" name="Estado" id="Estado" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="municipio"><h6>Municipio:</h6></label>
+            <input type="text" name="municipio" id="municipio" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="departamento"><h6>Departamento:</h6></label>
+            <input type="text" name="departamento" id="departamento" class="form-control">
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="Edo_civil"><h6>Estado Civil:</h6></label>
+            <input type="text" name="Edo_civil" id="Edo_civil" class="form-control">
+        </div>
+
+         
         
         <br>
        <br>
-       <input type="submit" name="Guardar_repre" class="btn btn-success btn-block" value="Guardado">    
+       <input type="submit" name="Guardar_repre" class="btn btn-success btn-block col-2 mt-3" value="Guardado">    
 
         </div>
        
@@ -110,5 +111,4 @@
   </div>
 
 
-</body>
-</html>
+<?php include("../footer.php") ?>

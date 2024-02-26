@@ -2,9 +2,8 @@
 <?php  include("../connect.php");?>
 
 <!-- CARRERAS -->
-<br>
-<br>
-<div class="container w-100">
+
+<div class="container w-75">
   <h2 class="mt-5">Carreras</h2>
   <div class="card card-body"> 
     

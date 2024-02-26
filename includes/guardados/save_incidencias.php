@@ -25,7 +25,7 @@
             die("Query failed");
 
          }
-        echo 'saved';
+        header("Location: ../info_medico/incidencias.php");
         // echo $query;
 
 
