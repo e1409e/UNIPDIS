@@ -6,11 +6,10 @@
 
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="/UNIPDIS/bootstrap/css/bootstrap.min.css"/>  
-    
-    
-    
     <!--Mi conf css-->
     <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/> 
+    <!-- Font Awesome Stylesheets -->
+    <link rel="stylesheet" href="/UNIPDIS/CSS/font-awesome.min.css">
  
 
 </head>
@@ -68,7 +67,11 @@
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/universidad/Facultades.php">Facultades</a></li>
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/universidad/carreras.php">Carreras</a></li>
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/universidad/periodos.php">Periodos</a></li>
-              </ul>  
+              </ul>
+
+              <li>
+              <a href="/UNIPDIS/includes/cerrar_sesion.php" class="btn btn-secondary">Cerrar Sesion</a>
+              </li>  
 
         </ul>
     </div>

@@ -51,8 +51,9 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
-                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+
+                          <a href="../deletes/delete_inci.php?id=<?php echo $row['id_incidencia']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>
                       </td> 
                   </tr>

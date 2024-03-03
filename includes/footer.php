@@ -1,16 +1,20 @@
 <!-- SCRIPTS -->
+
+
+    
+
     <!--BOOTSTRAP-->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-  
-    <script src="bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="/UNIPDIS/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/UNIPDIS/bootstrap/js/bootstrap.bundle.min.js"></script> 
 
-    <!-- jQuery Library -->
-    <script src="js/jquery-3.2.1.min.js"></script>  
+
+     <!-- jQuery Library -->
+    <script src="/UNIPDIS/JS/jquery-3.2.1.min.js"></script>   
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="/UNIPDIS/JS/popper.min.js"></script> 
+    
 
+   
     <script>
         function toggleSeccion() {
         var seccion = document.getElementById("seccionOculta");

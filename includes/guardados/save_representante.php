@@ -27,7 +27,7 @@
             die("Query failed");
 
          }
-         header("Location: ../Estudiantes.php");*/
+         header("Location: ../Estudiantes.php");
         // echo $query;
 
 

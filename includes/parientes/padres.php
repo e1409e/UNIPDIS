@@ -13,7 +13,9 @@
           <table class="table table-bordered rounded table-hover table-lg mb-5 ">
             <thead>
               <tr>
+                <th class="text-nowrap col-auto">ID</th>
                 <th class="col-auto">Parentesco</th>
+
                 <th class="text-nowrap col-auto">Nombre Del Representante</th>
                 <th class="text-nowrap col-auto">Cedula</th>
                 <th class="text-nowrap col-auto">Lugar de Nacimiento</th>
@@ -42,6 +44,7 @@
                   <tr>
                     <!-- columnas de la tabla en mysql-->
 
+                    <td class="text-nowrap col-auto"><?php echo $row['id_padres'] ?></td>
                     <td class="text-nowrap col-auto"><?php echo $row['tipo_familiar'] ?></td>
                     <td class="text-nowrap col-auto"><?php echo $row['nombre_contacto'] ?></td>
                     
@@ -62,8 +65,10 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
-                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+
+
+                          <a href="../deletes/delete_repre.php?id=<?php echo $row['id_padres']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>
                       </td> 
                   </tr>
@@ -76,6 +81,7 @@
 
         <!-- </div>
         <button class="btn btn-outline-info btn-sm" onclick="toggleSeccion()">Mostrar/Ocultar</button>  -->
+
         
     </div>
   </div>

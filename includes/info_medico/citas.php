@@ -24,6 +24,7 @@
               <?php 
                 include("../connect.php");
                 $select = "SELECT b.id_citas, CONCAT(a.nombres, ' ', a.apellidos, ' C.I: ', a.cedula) AS Estudiante, b.fecha_cita, b.motivo_cita FROM citas b INNER JOIN estudiantes a ON a.id_estudiante = b.id_estudiante;";
+
                 $resultados = mysqli_query($conn, $select);
 
                 while($row = mysqli_fetch_array($resultados)){ ?>
@@ -34,17 +35,12 @@
                     <td class="text-nowrap col-auto"><?php echo $row['Estudiante'] ?></td>
                     <td class="text-nowrap col-auto"><?php echo $row['fecha_cita'] ?></td>
                     <td class="text-nowrap col-auto"><?php echo $row['motivo_cita'] ?></td>
-                    
 
                     <!--Botones de acciones-->
                       <td>
-                       <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
-                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
-                        </div>
+                         <a href="../deletes/delete_cita.php?id=<?php echo $row['id_citas']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                       </td> 
                   </tr>
-
                           <?php } ?>     
 
             

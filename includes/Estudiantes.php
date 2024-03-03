@@ -71,8 +71,10 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block">A</a>
-                          <a href="delete.php?id=" class="btn btn-danger d-inline-block">B</a>
+                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+
+
+                          <a href="/UNIPDIS/includes/deletes/delete_estu.php?id=<?php echo $row['id_estudiante']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>
                       </td> 
                   </tr>
@@ -87,6 +89,7 @@
         
         <!-- <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> -->
         <a href="/UNIPDIS/includes/formularios/Agreg_Estudiantes.php" class="btn btn-primary mb-3">Nuevo</a>
+       
         
         
        
