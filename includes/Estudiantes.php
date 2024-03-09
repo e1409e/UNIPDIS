@@ -10,7 +10,7 @@
 
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table class="table rounded table-hover table-bordered table-lg mb-5">
+          <table class="table rounded table-hover table-bordered table-lg mb-5" id="tabla_estu">
             <thead>
               <tr>
                 <th class="col-auto">ID</th>

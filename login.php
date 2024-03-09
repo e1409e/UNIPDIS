@@ -1,6 +1,5 @@
 <?php  include("includes/connect.php") ?>
 
-
 <?php 
 
     session_start();
@@ -16,28 +15,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login de la Pagina</title>
-    <!--BOOTSTRAP-->
     <link rel="stylesheet" href="/UNIPDIS/bootstrap/css/bootstrap.min.css"/>  
-    <!--Mi conf css-->
-    <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/> 
-    <!-- Font Awesome Stylesheets -->
-    <link rel="stylesheet" href="/UNIPDIS/CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="/UNIPDIS/CSS/estilos.css"/> 
+
 
 </head>
-<body>
-	<div class="login">
+<body class="cuerpo">
+	<main>
 		<div class="contenedor_global">
         	<div class="caja">
-
             	<div class="caja_register">
                 	<h3>¿Aún no tienes una cuenta?</h3>
                 	<p>Regístrate para que puedas iniciar sesión</p>
-                	<a href="/UNIPDIS/register.php">Regístrarse</a>
+                	<a href="/UNIPDIS/register.php" class="btn btn-outline-light">Regístrarse</a>
+                </div>
             </div>
-        </div>
 
                 <!--Formulario de Login-->
-           	<div class="contenedor_login-register">
+           	<div class="contenedor_login">
 
                     <!--Login-->
                 <form action="includes/login_usuarios.php" method="POST" class="formulario_login">
@@ -48,7 +43,7 @@
                 </form>
             </div>
     	</div>
-	</div>
+	</main>
     </body>
 
 

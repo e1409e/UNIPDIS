@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $id_estudiante = $_GET['id'];
 
     // Query para eliminar la cita con el id proporcionado
-    $sql = "";
+    $sql = "DELETE FROM estudiantes WHERE id_estudiante = $id_estudiante";
 
 
 

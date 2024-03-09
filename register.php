@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de la Pagina</title>
-    <!--BOOTSTRAP-->
     <link rel="stylesheet" href="/UNIPDIS/bootstrap/css/bootstrap.min.css"/>  
-    <!--Mi conf css-->
-    <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/> 
-    <!-- Font Awesome Stylesheets -->
-    <link rel="stylesheet" href="/UNIPDIS/CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="/UNIPDIS/CSS/estilos.css"/> 
 
 
 </head>
 
-<body>
+<body class="cuerpo">
 
-	<div class="register">
+	<main>
 		<div class="contenedor_global">
         	<div class="caja">
             	<div class="caja_login">
                 	<h3>¿Ya tienes una cuenta?</h3>
                 	<p>Inicia sesión para entrar en la página</p>
-             		<a href="/UNIPDIS/login.php">Iniciar Sesión</a>
+             		<a href="/UNIPDIS/login.php" class="btn btn-outline-light">Iniciar Sesión</a>
              	</div>
+            </div>
 
                 <!--Formulario de registro-->
            	<div class="contenedor_register">
@@ -38,8 +35,7 @@
                     <button>Regístrarse</button>
    	            </form>
             </div>
-    	</div>
-	</div>
+	</main>
 
 </body>
 

@@ -10,12 +10,30 @@
     <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/> 
     <!-- Font Awesome Stylesheets -->
     <link rel="stylesheet" href="/UNIPDIS/CSS/font-awesome.min.css">
- 
+
+    <script src=" ../JS/jquery-3.7.1.js"></script>
+
+    <link rel="stylesheet" href="../CSS/dataTables.dataTables.css" />
+    <script src="../JS/dataTables.js"></script> 
+
 
 </head>
+
+<script>
+            $(document).ready( function () {
+                $('#tabla_estu').DataTable(
+                    {
+                        "language":{
+                            "url":"../JS/es-ES.json"
+                        }
+                    }
+                );
+                } );
+</script>
+
 <body>
 
-<nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-primary justify-content-between">
   <div class="container-fluid">
     <a class="navbar-brand">
       <img src="/UNIPDIS/img/logoUJGH.png" alt="Logo" width="165" class="img-fluid d-inline-block align-text-center">
@@ -24,7 +42,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ">
 
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/UNIPDIS/index.php">Inicio</a>
@@ -69,11 +87,14 @@
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/universidad/periodos.php">Periodos</a></li>
               </ul>
 
-              <li>
-              <a href="/UNIPDIS/includes/cerrar_sesion.php" class="btn btn-secondary">Cerrar Sesion</a>
-              </li>  
-
+              
+                
+              
+ 
         </ul>
     </div>
+    <li>
+      <a href="/UNIPDIS/includes/cerrar_sesion.php" class="btn btn-secondary">Cerrar Sesion</a>
+    </li>
   </div>
 </nav>

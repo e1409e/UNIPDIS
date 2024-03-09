@@ -9,9 +9,20 @@
 
 
      <!-- jQuery Library -->
-    <script src="/UNIPDIS/JS/jquery-3.2.1.min.js"></script>   
+    
+    <!-- <script src="/UNIPDIS/JS/jquery-3.2.1.min.js"></script>    -->
     <!-- Popper js -->
-    <script src="/UNIPDIS/JS/popper.min.js"></script> 
+    <script src="/UNIPDIS/JS/popper.min.js"></script>
+
+     <!-- datatables -->
+   
+    
+  
+ 
+
+
+
+   
     
 
    

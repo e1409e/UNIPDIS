@@ -38,7 +38,11 @@
 
                     <!--Botones de acciones-->
                       <td>
+                        <div class="btn-group">
+                        <a href="../edits/edit_cita.php?id=<?php echo $row['id_citas']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+
                          <a href="../deletes/delete_cita.php?id=<?php echo $row['id_citas']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
+                        </div> 
                       </td> 
                   </tr>
                           <?php } ?>     
