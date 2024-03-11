@@ -3,6 +3,8 @@
 
 
 
+
+
 <div class="container W-75">
   <h2 class="mt-5">Representante</h2>
   <div class="card card-body"> 
@@ -10,7 +12,7 @@
 
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table class="table table-bordered rounded table-hover table-lg mb-5 ">
+          <table class="table table-bordered rounded table-hover table-lg mb-5 " id="tabla_padres">
             <thead>
               <tr>
                 <th class="text-nowrap col-auto">ID</th>

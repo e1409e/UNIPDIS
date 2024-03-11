@@ -20,7 +20,7 @@
 </head>
 
 <script>
-            $(document).ready( function () {
+            $(document).ready( function() {
                 $('#tabla_estu').DataTable(
                     {
                         "language":{
@@ -28,6 +28,15 @@
                         }
                     }
                 );
+
+                $('#tabla_padres').DataTable(
+                    {
+                        "language":{
+                            "url":"../JS/es-ES.json"
+                        }
+                    }
+                );
+
                 } );
 </script>
 

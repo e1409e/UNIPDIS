@@ -48,7 +48,7 @@
             
             <div class="form-group col-6 mt-2">
                 <label for="fechnac_pari"><h6>Fecha de Nacimiento:</h6></label>
-                <input type="text" name="fechnac_pari" id="fechnac_pari" class="form-control">
+                <input type="date" name="fechnac_pari" id="fechnac_pari" class="form-control">
             </div>
 
 

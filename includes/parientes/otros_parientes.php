@@ -12,7 +12,7 @@
           <table class="table table-bordered rounded table-hover table-lg mb-5">
             <thead>
               <tr>
-                 <th class="col-auto">ID</th>
+                <th class="col-auto">ID</th>
                 <th class="text-nowrap col-auto">Estudiante</th>
                 <th class="col-auto">Nombre</th>
                 <th class="col-auto">Apellido</th>
@@ -48,7 +48,8 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+                          <a href="../edits/edit_OP.php?id=<?php echo $row['id_pariente']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+
 
                           <a href="../deletes/delete_OP.php?id=<?php echo $row['id_pariente']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>

@@ -12,7 +12,7 @@
           <table class="table table-bordered rounded table-hover table-lg mb-5">
             <thead>
               <tr>
-                <th class="col-1">ID</th>
+                <th class="col-1">#</th>
                 <th class="col-auto">Discapacidad</th>
                 <th class="col-1">Acciones</th>
               </tr>
@@ -34,7 +34,7 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+                          <a href="../edits/edit_disc.php?id=<?php echo $row['id_discapacidad']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
 
                           <a href="../deletes/delete_disc.php?id=<?php echo $row['id_discapacidad']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>

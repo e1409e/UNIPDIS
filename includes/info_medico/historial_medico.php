@@ -15,7 +15,7 @@
           <table class="table table-bordered rounded table-hover table-lg mb-5 ">
             <thead>
               <tr>
-                <th class="col-1">ID</th>
+                <th class="col-1">#</th>
                 <th class="text-nowrap col-auto">Estudiante</th>
                 <th class="text-nowrap col-auto">Certificado de Conapdis</th>
                 <th class="text-nowrap col-auto">Informe Medico</th>
@@ -43,7 +43,7 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+                          <a href="../edits/edit_HM.php?id=<?php echo $row['id_historialmedico']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
 
 
                           <a href="../deletes/delete_HM.php?id=<?php echo $row['id_historialmedico']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>

@@ -11,7 +11,7 @@
           <table class="table table-bordered rounded table-hover table-lg mb-5 ">
             <thead>
               <tr>
-                <th class="col-1">ID</th>
+                <th class="col-auto">#</th>
                 <th class="col-auto">Estudiante</th>
                 <th class="text-nowrap col-auto">Fecha de la Cita</th>
                 <th class="text-nowrap col-auto">Motivo de la Cita</th>
