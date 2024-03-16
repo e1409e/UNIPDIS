@@ -4,41 +4,43 @@
     <meta charset="utf-8">
     <title>Censo para estudiantes con discapacidad</title>
 
-    <!--BOOTSTRAP-->
+      <!-- <!– Bootstrap –> -->
     <link rel="stylesheet" href="/UNIPDIS/bootstrap/css/bootstrap.min.css"/>  
-    <!--Mi conf css-->
+
+    <!-- <!– Mi conf css –> -->
     <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/> 
-    <!-- Font Awesome Stylesheets -->
+
+    <!-- <!– Font Awesome Stylesheets –> -->
     <link rel="stylesheet" href="/UNIPDIS/CSS/font-awesome.min.css">
+    <!-- select2 -->
+    <link href="/UNIPDIS/select2/css/select2.min.css" rel="stylesheet" />
+ 
 
-    <script src=" ../JS/jquery-3.7.1.js"></script>
+    <!-- <!– jQuery –> -->
+    <script src="/UNIPDIS/JS/jquery-3.7.1.js"></script>
 
-    <link rel="stylesheet" href="../CSS/dataTables.dataTables.css" />
-    <script src="../JS/dataTables.js"></script> 
+    <!-- <!– DataTables Stylesheet –> -->
+    <link href="/UNIPDIS/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="/UNIPDIS/DataTables/datatables.css" rel="stylesheet">
+    <link href="/UNIPDIS/DataTables/dataTables.dataTables.css" rel="stylesheet">
+    <link href="/UNIPDIS/DataTables/responsive.dataTables.css" rel="stylesheet">
 
+    <!-- <!– DataTables JavaScript –> -->
+    <script src="/UNIPDIS/DataTables/datatables.min.js"></script>
+    <script src="/UNIPDIS/DataTables/datatables.js"></script>
+    <script src="/UNIPDIS/DataTables/dataTables.responsive.js"></script>
+    <script src="/UNIPDIS/DataTables/responsive.dataTables.js"></script>
+    <script src="/UNIPDIS/DataTables/pdfmake-0.2.7/pdfmake.js"></script>
+    <script src="/UNIPDIS/DataTables/pdfmake-0.2.7/pdfmake.min.js"></script>
+    <script src="/UNIPDIS/DataTables/pdfmake-0.2.7/vfs_fonts.js"></script>
+    <script src="/UNIPDIS/DataTables/JSZip-3.10.1/jszip.js"></script>
+    <script src="/UNIPDIS/DataTables/JSZip-3.10.1/jszip.min.js"></script>
+    
+    <!-- select2 -->
+    <script src="/UNIPDIS/select2/js/select2.min.js"></script>    
+    
 
 </head>
-
-<script>
-            $(document).ready( function() {
-                $('#tabla_estu').DataTable(
-                    {
-                        "language":{
-                            "url":"../JS/es-ES.json"
-                        }
-                    }
-                );
-
-                $('#tabla_padres').DataTable(
-                    {
-                        "language":{
-                            "url":"../JS/es-ES.json"
-                        }
-                    }
-                );
-
-                } );
-</script>
 
 <body>
 

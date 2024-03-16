@@ -10,19 +10,20 @@
 
     
 
-    <div class="table-responsive" > 
-        <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table class="table table-bordered rounded table-hover table-lg mb-5">
+    <div class="table-responsive" >
+             
+          <table id="Tinc" class="table table-bordered rounded table-hover table-lg mb-2 mt-3 ">
             <thead>
               <tr>
+                <th class="col-auto"></th>
                 <th class="col-auto">#</th>
                 <th class="col-auto">Estudiante</th>
                 <th class="text-nowrap col-auto">Hora del Incidente</th>
                 <th class="text-nowrap col-auto">Fecha del Incidente</th>
                 <th class="text-nowrap col-auto">Lugar del Incidente</th>
                 <th class="text-nowrap col-auto">Descripción</th>
-                <th class="text-nowrap col-auto">Acuerdos</th>
-                <th class="text-nowrap col-auto">Observaciones</th>
+                <th class="text-nowrap col-auto">Acuerdos:</th>
+                <th class="text-nowrap col-auto">Observaciones:</th>
                 <th class="text-nowrap col-1">Acciones</th>
             
               </tr>
@@ -37,7 +38,7 @@
                 while($row = mysqli_fetch_array($resultados)){ ?>
                   <tr>
                     <!-- columnas de la tabla en mysql-->
-
+                    <td class="text-nowrap col-auto"></td>
                     <td class="text-nowrap col-auto"><?php echo $row['id_incidencia'] ?></td>
                     <td class="text-nowrap col-auto"><?php echo $row['Estudiante'] ?></td>
                     <td class="text-nowrap col-auto"><?php echo $row['hora_incidente'] ?></td>
@@ -63,15 +64,72 @@
             
             </tbody>
           </table>
+          
 
-       <!--  </div>
-        <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>   -->
-        <a href="/UNIPDIS/includes/formularios/agreg_incidencias.php" class="btn btn-primary mb-3">Nuevo</a>
-
+      
+      
+      <a href="/UNIPDIS/includes/formularios/agreg_incidencias.php" class="float-right btn btn-primary col-1 mb-3 mt-3">Nuevo</a>
     </div>
+    
+    
+    
   </div>
      
 </div> 
+
+<div class="text-right">
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#Tinc').DataTable({
+            "language": {
+                "url": "/UNIPDIS/JS/es-ES.json"
+            },
+          "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+          "dom": 'Bflrtpi',
+          "pagingType": "simple_numbers",
+          "info": true,
+          
+            buttons: [
+                  {
+                  extend: 'excelHtml5',
+                  text: '<i class=" fa fa-file-excel-o"></i> ',
+                  titleAttr: 'Exportar a Excel',
+                  className: 'btn btn-success',
+                },
+                {
+                  extend: 'pdfHtml5',
+                  text: '<i class="fa fa-file"></i> ',
+                  titleAttr: 'Exportar a PDF',
+                  className: 'btn btn-danger',
+                },
+                {
+                  extend: 'print',
+                  text: '<i class="fa fa-print"></i> ',
+                  titleAttr: 'Imprimir',
+                  className: 'btn btn-info',
+                },
+
+              ],
+            
+         columnDefs: [
+        {
+            className: 'dtr-control',
+            orderable: false,
+            target: 0
+        }
+    ],
+    order: [1, 'asc'],
+    responsive: {
+        details: {
+            type: 'column',
+            target: 'tr'
+        }
+    }
+
+        });
+    });
+</script>
+</div>
 
 
 

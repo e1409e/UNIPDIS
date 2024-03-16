@@ -13,13 +13,13 @@ if (isset($_GET['id'])) {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
 
-         $row['id_pariente']; 
-         $row['id_estudiante']; 
-         $row['nombre_pariente']; 
-         $row['apellido_pariente']; 
-         $row['fecha_nacimiento']; 
-         $row['ocupacion']; 
-         $row['parentesco']; 
+        $idpari = $row['id_pariente']; 
+        $idestu = $row['id_estudiante']; 
+        $NP = $row['nombre_pariente']; 
+        $AP = $row['apellido_pariente']; 
+        $FN = $row['fecha_nacimiento']; 
+        $OCP = $row['ocupacion']; 
+        $PO = $row['parentesco']; 
                     
 
 
@@ -92,33 +92,33 @@ if (isset($_GET['id'])) {
             
             <div class="form-group col-6 mt-2">
                 <label for="nomb_pari"><h6>Nombre del Pariente:</h6></label>
-                <input type="text" name="nomb_pari" id="nomb_pari" class="form-control">
+                <input type="text" name="nomb_pari" id="nomb_pari" class="form-control" value="<?php echo $NP; ?>">
             </div>
 
 
             
             <div class="form-group col-6 mt-2">
                 <label for="ape_pari"><h6>Apellido del Pariente:</h6></label>
-                <input type="text" name="ape_pari" id="ape_pari" class="form-control">
+                <input type="text" name="ape_pari" id="ape_pari" class="form-control" value="<?php echo $AP; ?>">
             </div>
 
             
             <div class="form-group col-6 mt-2">
                 <label for="fechnac_pari"><h6>Fecha de Nacimiento:</h6></label>
-                <input type="date" name="fechnac_pari" id="fechnac_pari" class="form-control">
+                <input type="date" name="fechnac_pari" id="fechnac_pari" class="form-control" value="<?php echo $FN; ?>">
             </div>
 
 
             
             <div class="form-group col-6 mt-2">
                 <label for="ocupacion"><h6>Ocupación:</h6></label>
-                <input type="text" name="ocupacion" id="ocupacion" class="form-control">
+                <input type="text" name="ocupacion" id="ocupacion" class="form-control" value="<?php echo $OCP; ?>">
             </div>
 
             
             <div class="form-group col-6 mt-2">
                 <label for="Parent_otro"><h6>Parentesco:</h6></label>
-                <input type="text" name="Parent_otro" id="Parent_otro" class="form-control">
+                <input type="text" name="Parent_otro" id="Parent_otro" class="form-control" value="<?php echo $PO; ?>">
             </div>
 
             <br>

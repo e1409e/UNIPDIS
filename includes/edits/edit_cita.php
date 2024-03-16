@@ -14,8 +14,8 @@ if (isset($_GET['id'])) {
         
         
         $row = mysqli_fetch_array($result);
-        $fecha = $row['fecha_cita'];
-        $motivo = $row['motivo_cita'];
+        $fechaC = $row['fecha_cita'];
+        $motivoC = $row['motivo_cita'];
     
 
 
@@ -42,10 +42,10 @@ if (isset($_GET['id'])) {
       <div class="card card-body">
       <form action="edit_cita.php?id=<?php echo $_GET['id']; ?>" method="POST" class="row justify-content-center align-items-center">
         <div class="form-group">
-          <input name="fecha" type="date" class="form-control" value="<?php echo $fecha; ?>">
+          <input name="fecha" type="date" class="form-control" value="<?php echo $fechaC; ?>">
         </div>
         <div class="form-group">
-        <textarea name="motivo" class="form-control mt-2" cols="30" rows="5"><?php echo $motivo;?></textarea>
+        <textarea name="motivo" class="form-control mt-2" cols="30" rows="5"><?php echo $motivoC;?></textarea>
         </div>
         <button class="btn btn-success mb-2 mt-3 col-4" name="update">
           Update

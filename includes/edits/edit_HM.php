@@ -13,10 +13,10 @@ if (isset($_GET['id'])) {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
 
-        $row['id_estudiante']; 
-        $row['certificado_conapdis']; 
-        $row['informe_medico']; 
-        $row['tratamiento']; 
+        $idestu = $row['id_estudiante']; 
+        $CC = $row['certificado_conapdis']; 
+        $IM = $row['informe_medico']; 
+        $TT = $row['tratamiento']; 
                     
 
 
@@ -48,8 +48,8 @@ if (isset($_GET['id'])) {
         <form action="edit_HM.php?id=<?php echo $_GET['id']; ?>" method="POST" class="row justify-content-center align-items-center">
        
 
-            <div class="col-6 mt-2">
-            <h6 for="opciones">Estudiante:</h6>
+            <div class="col-6 mt-4">
+            <label for="estudiantes_uni"><h6>Estudiante:</h6></label>
                <select class="form-select" aria-label="Default select example" name="estudiantes_id" id="estudiantes_uni">
 
                    <?php
@@ -85,20 +85,20 @@ if (isset($_GET['id'])) {
          
             <div class="form-group col-6 mt-2">
                 <label for="conapdis"><h6>¿Posee Certificado del Conapdis?:</h6></label>
-                <input type="text" name="conapdis" id="conapdis" class="form-control">
+                <input type="text" name="conapdis" id="conapdis" class="form-control" value="<?php echo $CC; ?>">
             </div>
 
 
      
             <div class="form-group col-12 mt-2">
                 <label for="inf_med"><h6>Agregar Informe Medico:</h6></label>
-                <textarea name="inf_med" id="inf_med" rows="4" class="form-control"></textarea>
+                <textarea name="inf_med" id="inf_med" rows="4" class="form-control"><?php echo $IM; ?></textarea>
             </div>
 
         
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="tratamiento"><h6>Tratamiento:</h6></label>
-                <textarea name="tratamiento" id="tratamiento" rows="2" class="form-control"></textarea>
+                <textarea name="tratamiento" id="tratamiento" rows="2" class="form-control"><?php echo $TT; ?></textarea>
                
             </div>
 

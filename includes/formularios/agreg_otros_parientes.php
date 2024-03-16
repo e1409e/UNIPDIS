@@ -11,7 +11,7 @@
 
             <div class="col-6 mt-2">
             <h6 for="opciones">Estudiante:</h6>
-                <select class="form-select" aria-label="Default select example" name="estudiantes_id" id="estudiantes_uni">
+                <select class="form-select estuselect2" aria-label="Default select example" name="estudiantes_id" id="estudiantes_uni">
                    <option value="estudiantes_uni">Seleccione un estudiante</option>
                     <?php
                   // Conexión a la base de datos

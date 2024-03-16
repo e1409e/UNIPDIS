@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
         
         
         $row = mysqli_fetch_array($result);
-        $disc = $row['discapacidades'];
+        $discapacidad = $row['discapacidades'];
         
     
 
@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
 
         <div class="form-group col-8">
             <label for="discapacidad"><h6>Discapacidad</h6></label>
-            <input type="text" name="discapacidad" id="discapacidad" class="form-control">
+            <input type="text" name="discapacidad" id="discapacidad" class="form-control" value="<?php echo $discapacidad; ?>">
         </div>
        
         <button class="btn btn-success mb-2 mt-3 col-5" name="update">Update</button>

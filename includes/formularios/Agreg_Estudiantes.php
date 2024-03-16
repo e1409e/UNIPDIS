@@ -12,55 +12,55 @@
         
         <div class="form-group col-5 mt-2">
             <label for="motivo_cita"><h6>Nombre del Estudiante:</h6></label>
-            <input type="text" name="nombre" id="nombre" class="form-control">
+            <input type="text" name="nombre" id="nombre" class="form-control" required>
         </div>
             
         
         <div class="form-group col-5 mt-2">
             <label for="apellido"><h6>Apellido del Estudiante:</h6></label>
-            <input type="text" name="apellido" id="apellido" class="form-control">
+            <input type="text" name="apellido" id="apellido" class="form-control" required>
         </div>
 
           <div class="form-group col-2 mt-2">
-            <label for="edad"><h6>Edad del Estudiante:</h6></label>
-            <input type="text" name="edad" id="edad" class="form-control">
+            <label for="fechN"><h6>Fecha de Nacimiento:</h6></label>
+            <input type="date" name="fechN" id="fechN" class="form-control" required>
         </div>
 
            
         
         <div class="form-group col-6 mt-2">
             <label for="cedula"><h6>Cédula del Estudiante:</h6></label>
-            <input type="text" name="cedula" id="cedula" class="form-control">
+            <input type="text" name="cedula" id="cedula" class="form-control" required>
         </div>
 
         
         <div class="form-group col-6 mt-2">
             <label for="telefono"><h6>Teléfono del Estudiante:</h6></label>
-            <input type="text" name="telefono" id="telefono" class="form-control">
+            <input type="text" name="telefono" id="telefono" class="form-control" required>
         </div>
 
         
         <div class="form-group col-6 mt-2">
             <label for="correo"><h6>Correo Académico:</h6></label>
-            <input type="text" name="correo" id="correo" class="form-control">
+            <input type="text" name="correo" id="correo" class="form-control" required>
         </div>
 
        
        
         <div class="form-group col-6 mt-2">
             <label for="nombre_contacto"><h6>Nombre del Representante:</h6></label>
-            <input type="text" name="nombre_contacto" id="nombre_contacto" class="form-control">
+            <input type="text" name="nombre_contacto" id="nombre_contacto" class="form-control" required>
         </div>
 
         
         <div class="form-group col-6 mt-2">
             <label for="telefono_contacto"><h6>Teléfono del Representante</h6></label>
-            <input type="text" name="telefono_contacto" id="telefono_contacto" class="form-control">
+            <input type="text" name="telefono_contacto" id="telefono_contacto" class="form-control" required>
         </div>
 
         <div class="col-6 mt-2">
         <h6 for="opciones">Discapacidad:</h6>
-                <select class="form-select" aria-label="Default select example" name="discapacidad_id" id="discapacidad">
+                <select class="form-select discselect2" aria-label="Default select example" name="discapacidad_id" id="discapacidad" required>
                    <option value="discapacidad">Seleccione una discapacidad</option>
                     <?php
                   // Conexión a la base de datos

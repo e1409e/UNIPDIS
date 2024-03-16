@@ -14,13 +14,13 @@ if (isset($_GET['id'])) {
         
         
         $row = mysqli_fetch_array($result);
-        $row['id_estudiante']; 
-        $row['hora_incidente']; 
-        $row['fecha_incidente']; 
-        $row['donde_incidente']; 
-        $row['descripcion_incidente']; 
-        $row['acuerdos']; 
-        $row['observaciones']; 
+        $idestu = $row['id_estudiante']; 
+        $HI = $row['hora_incidente']; 
+        $FI = $row['fecha_incidente']; 
+        $DI = $row['donde_incidente']; 
+        $desI = $row['descripcion_incidente']; 
+        $AC = $row['acuerdos']; 
+        $OB = $row['observaciones']; 
                     
 
 
@@ -91,36 +91,36 @@ if (isset($_GET['id'])) {
             
             <div class="form-group col-6 mt-2">
                 <label for="Hora_inc"><h6>Hora del Incidente:</h6></label>
-                <input type="text" name="Hora_inc" id="Hora_inc" class="form-control">
+                <input type="text" name="Hora_inc" id="Hora_inc" class="form-control" value="<?php echo $HI; ?>">
             </div>
 
 
             
             <div class="form-group col-6 mt-2">
                  <label for="fech_inc"><h6>Fecha del Incidente:</h6></label>
-                <input type="date" name="fech_inc" id="fech_inc" class="form-control">
+                <input type="date" name="fech_inc" id="fech_inc" class="form-control" value="<?php echo $FI; ?>">
             </div>
 
              
             <div class="form-group col-6 mt-2">
                 <label for="lug_inc"><h6>Lugar del Incidente:</h6></label>
-                <input type="text" name="lug_inc" id="lug_inc" class="form-control">
+                <input type="text" name="lug_inc" id="lug_inc" class="form-control" value="<?php echo $DI; ?>">
             </div>
 
             <div class="form-group col-12 mt-2">
                 <label for="observaciones"><h6>Descripción del incidente:</h6></label>
-                <textarea name="descripcion" id="descripcion" rows="3" class="form-control"></textarea>
+                <textarea name="descripcion" id="descripcion" rows="3" class="form-control"><?php echo $desI; ?></textarea>
             </div>
 
             <div class="form-group col-12 mt-2">
                 <label for="acuerdos"><h6>Acuerdos:</h6></label>
-                <textarea name="acuerdos" id="acuerdos" rows="3" class="form-control"></textarea>
+                <textarea name="acuerdos" id="acuerdos" rows="3" class="form-control"><?php echo $AC; ?></textarea>
             </div>
 
 
             <div class="form-group col-12 mt-2">
                 <label for="observaciones"><h6>Observaciones:</h6></label>
-                <textarea name="observaciones" id="observaciones" rows="3" class="form-control"></textarea>
+                <textarea name="observaciones" id="observaciones" rows="3" class="form-control"><?php echo $OB; ?></textarea>
             </div>
 
             <br>

@@ -10,7 +10,7 @@
 
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table class="table rounded table-hover table-bordered  table-lg mb-5">
+          <table id="Tper" class="table rounded table-hover table-bordered  table-lg mb-2 mt-3">
             <thead>
               <tr>
                 <th class="text-nowrap col-1">ID</th>
@@ -37,8 +37,7 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="edit.php?id=" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
-
+                          <a href="../edits/edit_peri.php?id=<?php echo $row['id_periodo']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
 
                           <a href="../deletes/delete_periodo.php?id=<?php echo $row['id_periodo']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>
@@ -54,10 +53,22 @@
         <!-- </div>
 
         <button class="btn btn-primary btn-sm" onclick="toggleSeccion()">Mostrar</button>  -->
-        <a href="/UNIPDIS/includes/formularios/agreg_periodo.php" class="btn btn-primary mb-3">Nuevo</a>
+        <a href="/UNIPDIS/includes/formularios/agreg_periodo.php" class="btn btn-primary mb-3 mt-3">Nuevo</a>
        
     </div>
   </div>
 </div>
+<script type="text/javascript">
+   $(document).ready(function() {
+                $('#Tper').DataTable(
+                    {
+                        "language":{
+                            "url":"/UNIPDIS/JS/es-ES.json"
+                        },
+                        "dom": 'flrti',
+                    }
+                )});
+    
+</script>
 
 <?php include("../footer.php"); ?> 
