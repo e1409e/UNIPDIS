@@ -6,13 +6,15 @@
 <div class="container w-75">
 <h2 class="mt-5 item-title text-center">Agregar Periodo</h2> 
   <div class="card card-body mb-3">
-     <form action="/UNIPDIS/includes/guardados/save_periodo.php" method="POST" class="row justify-content-center">
+     <form action="/UNIPDIS/includes/guardados/save_periodo.php" method="POST" class="row justify-content-center needs-validation">
        
 
 
         <div class="form-group col-11">
             <label for="periodo"><h6>Periodo</h6></label>
-            <input type="text" name="periodo" id="periodo" class="form-control">
+            <input type="text" name="periodo" id="periodo" class="form-control" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
         </div>
 
         
