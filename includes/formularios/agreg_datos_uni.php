@@ -4,7 +4,7 @@
 
 
 <div class="container w-75">
-<h2 class="mt-5">Agregar Datos Universitarios del Estudiante</h2> 
+<h2 class="mt-5 ">Agregar Datos Universitarios del Estudiante</h2> 
   <div class="card card-body mb-3">
      <form action="/UNIPDIS/includes/guardados/save_datos_uni.php" method="POST" class="row justify-content-center align-items-center needs-validation">
        

@@ -1,60 +1,96 @@
 <?php
 include("../connect.php");
 
-
+//datos del estudiante
 if (isset($_GET['id'])) {
    
-    $id_repre = $_GET['id'];
+    $id_estu = $_GET['id'];
 
    
-    $sql = "SELECT * FROM padres WHERE id_padres = $id_repre;";
-    $result =  mysqli_query($conn, $sql);
+    $sqlEstu = "SELECT * FROM estudiantes WHERE id_estudiante = $id_estu;";
+    $result =  mysqli_query($conn, $sqlEstu);
 
     if (mysqli_num_rows($result) == 1) {
         
         
         $row = mysqli_fetch_array($result);
         
-        $tipo = $row['tipo_familiar']; 
+        $nomb = $row['nombres']; 
                 
-        $CI = $row['cedula_padre']; 
-        $lugN = $row['lugar_nacimiento']; 
-        $FN = $row['fecha_nacimiento']; 
-        $dirH = $row['direccion_habitacion'];
+        $ape = $row['apellidos']; 
+        $CI = $row['cedula']; 
+        $tlf = $row['telefono']; 
+        $mail = $row['correo'];
+        $nombC = $row['nombre_contacto']; 
         $tlfC = $row['telefono_contacto']; 
-        $lugT = $row['lugar_trabajo']; 
-        $est = $row['estado']; 
-        $mun = $row['municipio']; 
-        $dep = $row['departamento']; 
-        $estC = $row['estadodo_civil'];
+        $discID = $row['discapacidad_id']; 
+        $FN = $row['fecha_nacimiento']; 
+        $obs = $row['observaciones']; 
+        $seg = $row['seguimiento'];
         $idestu = $row['id_estudiante']; 
         
     
 
 
         }
-    }  
+    }
 
+    //datos universitarios
+    if (isset($_GET['id'])) {
+   
+    $id_uni = $_GET['id'];
+
+   
+    $sqlUni = "SELECT * FROM universidad WHERE id_estudiante = $id_uni;";
+    $result2 =  mysqli_query($conn, $sqlUni);
+
+    if (mysqli_num_rows($result2) == 1) {
+        
+        
+        $row = mysqli_fetch_array($result2);
+        
+        $fac = $row['facultad_id'];         
+        $car = $row['carrera_id']; 
+        $per = $row['periodo_id']; 
+
+
+        }
+    }
+
+
+
+
+    //EDITAR ESTUDIANTE
     if (isset($_POST['update'])) {
-      $id_repre = $_GET['id'];
-      $parentesco = $_POST['parentesco'];
-        $cedula_repre = $_POST['cedula_repre'];
-        $lug_naci = $_POST['lug_naci'];
-        $fech_naci = $_POST['fech_naci'];
-        $dir_hab = $_POST['dir_hab'];
-        $telf_cont = $_POST['telf_cont'];
-        $lug_trab = $_POST['lug_trab'];
-        $Estado = $_POST['Estado'];
-        $municipio = $_POST['municipio'];
-        $departamento = $_POST['departamento'];
-        $Edo_civil = $_POST['Edo_civil'];
-        $id_estudiante = $_POST['id_estudiante'];
+      $id_estu = $_GET['id'];
+        
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $cedula = $_POST['cedula'];
+        $telefono = $_POST['telefono'];
+        $correo = $_POST['correo'];
+        
+        $nomb_contacto = $_POST['nombre_contacto'];
+        $tlf_contacto = $_POST['telefono_contacto'];
+
+        $discapacidad = $_POST['discapacidad_id'];
+        $fechN = $_POST['fechN'];
+       
+        $observaciones = $_POST['observaciones'];
+        $seguimiento = $_POST['seguimiento'];
+
+        $carrera_id = $_POST['carrera_id'];
+        $facultades_id = $_POST['facultades_id'];
+        $periodo_id = $_POST['periodo_id'];
       
 
-      $query = "UPDATE padres set tipo_familiar = '$parentesco', cedula_padre = '$cedula_repre', lugar_nacimiento = '$lug_naci', fecha_nacimiento = '$fech_naci', direccion_habitacion = '$dir_hab', telefono_contacto = '$telf_cont', lugar_trabajo = '$lug_trab', estado = '$Estado', municipio = '$municipio', departamento = '$departamento', estadodo_civil = '$Edo_civil', id_estudiante = '$id_estudiante' WHERE id_padres = $id_repre;";
-      mysqli_query($conn, $query);
+      $queryEstu = "UPDATE estudiantes set nombres = '$nombre', apellidos = '$apellido', cedula = '$cedula', telefono = '$telefono', correo = '$correo', nombre_contacto = '$nomb_contacto' , telefono_contacto = '$tlf_contacto', discapacidad_id = '$discapacidad', fecha_nacimiento = '$fechN', observaciones = '$observaciones', seguimiento = '$seguimiento' WHERE id_estudiante = $id_estu;";
+
+      $queryUni = "UPDATE universidad set carrera_id = '$carrera_id', facultad_id = '$facultades_id', periodo_id = '$periodo_id'  WHERE id_estudiante = $id_estu;";
+      mysqli_query($conn, $queryEstu);
+      mysqli_query($conn, $queryUni);
       
-      header('Location: ../parientes/padres.php');
+      header('Location: ../Estudiantes.php');
 }
 
 ?>
@@ -62,105 +98,228 @@ if (isset($_GET['id'])) {
 <?php include('../header.php'); ?>
 <div class="container p-4">
   <div class="row">
-    <div class="col-md-4 mx-auto">
+    <div class="col mx-auto">
       <div class="card card-body">
       <form action="edit_estudiante.php?id=<?php echo $_GET['id']; ?>" method="POST" class="row justify-content-center align-items-center">
 
+         <div class="form-group col-6 mt-2">
+            <label for="motivo_cita"><h6>Nombre del Estudiante:</h6></label>
+            <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo "$nomb"; ?>" required >
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+            
+        
         <div class="form-group col-6 mt-2">
-             <label for="parentesco"><h6>Parentesco:</h6></label>
-            <input type="text" name="parentesco" id="parentesco" class="form-control" value="<?php echo "$tipo"; ?>">
+            <label for="apellido"><h6>Apellido del Estudiante:</h6></label>
+            <input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo "$ape"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+
+          <div class="form-group col-6 mt-2">
+            <label for="fechN"><h6>Fecha de Nacimiento:</h6></label>
+            <input type="date" name="fechN" id="fechN" class="form-control" value="<?php echo "$FN"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+
+           
+        
+        <div class="form-group col-6 mt-2">
+            <label for="cedula"><h6>Cédula del Estudiante:</h6></label>
+            <input type="text" name="cedula" id="cedula" class="form-control" value="<?php echo "$CI"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="telefono"><h6>Teléfono del Estudiante:</h6></label>
+            <input type="text" name="telefono" id="telefono" class="form-control" value="<?php echo "$tlf"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="correo"><h6>Correo Académico:</h6></label>
+            <input type="text" name="correo" id="correo" class="form-control" value="<?php echo "$mail"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+
+       
+       
+        <div class="form-group col-6 mt-2">
+            <label for="nombre_contacto"><h6>Nombre del Representante:</h6></label>
+            <input type="text" name="nombre_contacto" id="nombre_contacto" class="form-control" value="<?php echo "$nombC"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
+        </div>
+
+        
+        <div class="form-group col-6 mt-2">
+            <label for="telefono_contacto"><h6>Teléfono del Representante</h6></label>
+            <input type="text" name="telefono_contacto" id="telefono_contacto" class="form-control" value="<?php echo "$tlfC"; ?>" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
         </div>
 
         <div class="col-6 mt-2">
-        <h6 for="opciones">Estudiante:</h6>
-                <select class="form-select" aria-label="Default select example" name="id_estudiante" id="Estudiante">
+        <h6 for="opciones">Discapacidad:</h6>
+                <select class="form-select discselect2" aria-label="Default select example" name="discapacidad_id" id="discapacidad" required>
                     <?php
 
                     include("../connect.php");
 
-                    $id_inci = $_GET['id'];
-                    $select = "SELECT a.id_estudiante, CONCAT(a.nombres, ' ', a.apellidos, ' C.I: ', a.cedula) AS Estudiante, b.hora_incidente, b.fecha_incidente, b.donde_incidente, b.descripcion_incidente, b.acuerdos, b.observaciones FROM incidencias b INNER JOIN estudiantes a ON a.id_estudiante = b.id_estudiante WHERE id_incidencia = $id_inci;";
+                    
+                    $select = "SELECT * FROM discapacidad WHERE id_discapacidad = $discID;";
                     $resultados = mysqli_query($conn, $select);
                     $row = mysqli_fetch_array($resultados);
-                    echo '<option value="' . $row['id_estudiante'] . '">' . $row['Estudiante'] . '</option>';  
+                    echo '<option value="' . $row['id_discapacidad'] . '">' . $row['discapacidades'] . '</option>';  
                     ?> 
-                   <!-- <option value="estudiantes_uni">Seleccione un estudiante</option> -->
                     <?php
                   // Conexión a la base de datos
                   $conexion = mysqli_connect("localhost", "root", "", "unipdis");
 
                   // Consulta a la tabla para obtener las opciones
-                  $consulta = "SELECT id_estudiante, CONCAT(nombres, ' ', apellidos, ' C.I: ', cedula) AS Estudiante FROM estudiantes";
+                  $consulta = "SELECT * FROM discapacidad";
                   $resultados = mysqli_query($conexion, $consulta);
 
                   // Recorremos los resultados y creamos las opciones
                   while ($fila = mysqli_fetch_array($resultados)) {
-                    echo '<option value="' . $fila['id_estudiante'] . '">' . $fila['Estudiante'] . '</option>';
+                    echo '<option value="' . $fila['id_discapacidad'] . '">' . $fila['discapacidades'] . '</option>';
                   }
 
-                    
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
                     ?>
                 </select>
-        </div>        
-                
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Es necesario llenar este campo</div>   
+        </div>
         
-        <div class="form-group col-6 mt-2">
-            <label for="cedula_repre"><h6>Cédula del Representante:</h6></label>
-            <input type="text" name="cedula_repre" id="cedula_repre" class="form-control" value="<?php echo "$CI"; ?>" >
+        <div class="col-6 mt-4">
+            <h6 for="opciones">Carreras:</h6>
+                <select class="form-select estuselect2" aria-label="Default select example" name="carrera_id" id="carrera" required>
+                  <?php
+
+                    include("../connect.php");
+
+                    
+                    $select = "SELECT carrera_id, carreras FROM universidad u JOIN carrera c ON u.carrera_id = c.id_carrera WHERE  id_estudiante = $id_estu;";
+                    $resultados = mysqli_query($conn, $select);
+                    $row = mysqli_fetch_array($resultados);
+                    echo '<option value="' . $row['carrera_id'] . '">' . $row['carreras'] . '</option>';  
+                    ?>
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_carrera, carreras FROM carrera";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_carrera'] . '">' . $fila['carreras'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Es necesario llenar este campo</div>
+            </div>    
+
+            <div class="col-6 mt-4 mb-4">
+             <h6 for="opciones">Facultades:</h6>
+                <select class="form-select estuselect2" aria-label="Default select example" name="facultades_id" id="facultades" required>
+
+                    <?php
+
+                    include("../connect.php");
+
+                    
+                    $select = "SELECT facultad_id, facultades FROM universidad u JOIN facultad f ON u.facultad_id = f.id_facultad WHERE  id_estudiante = $id_estu;";
+                    $resultados = mysqli_query($conn, $select);
+                    $row = mysqli_fetch_array($resultados);
+                    echo '<option value="' . $row['facultad_id'] . '">' . $row['facultades'] . '</option>';  
+                    ?>
+                   
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_facultad, facultades FROM facultad";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_facultad'] . '">' . $fila['facultades'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Es necesario llenar este campo</div>
+            </div>
+            
+
+            <div class="col-6 mt-4 mb-4">
+            <h6 for="opciones">Periodo:</h6>
+                <select class="form-select estuselect2" aria-label="Default select example" name="periodo_id" id="periodo" required>
+                   
+                    <?php
+
+                    include("../connect.php");
+
+                    
+                    $select = "SELECT periodo_id, periodos FROM universidad u JOIN periodo p ON u.periodo_id = p.id_periodo WHERE  id_estudiante = $id_uni;";
+                    $resultados = mysqli_query($conn, $select);
+                    $row = mysqli_fetch_array($resultados);
+                    echo '<option value="' . $row['periodo_id'] . '">' . $row['periodos'] . '</option>';  
+                    ?>
+
+
+                    <?php
+                  // Conexión a la base de datos
+                  $conexion = mysqli_connect("localhost", "root", "", "unipdis");
+
+                  // Consulta a la tabla para obtener las opciones
+                  $consulta = "SELECT id_periodo, periodos FROM periodo";
+                  $resultados = mysqli_query($conexion, $consulta);
+
+                  // Recorremos los resultados y creamos las opciones
+                  while ($fila = mysqli_fetch_array($resultados)) {
+                    echo '<option value="' . $fila['id_periodo'] . '">' . $fila['periodos'] . '</option>';
+                  }
+
+                    // Cerramos la conexión
+                    mysqli_close($conexion);
+                    ?>
+                </select>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback">Es necesario llenar este campo</div>
+            </div>  
+
+        <div class="form-group col-12 mt-2">
+            <label for="observaciones"><h6>Observaciones:</h6></label>
+            <textarea name="observaciones" id="observaciones" rows="4" class="form-control"  required><?php echo $obs; ?></textarea>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
         </div>
 
-        
-        <div class="form-group col-6 mt-2">
-            <label for="lug_naci"><h6>Lugar de Nacimiento:</h6></label>
-            <input type="text" name="lug_naci" id="lug_naci" class="form-control" value="<?php echo "$lugN"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="fech_naci"><h6>Fecha de Nacimiento:</h6></label>
-            <input type="date" name="fech_naci" id="fech_naci" class="form-control" value="<?php echo "$FN"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="dir_hab"><h6>Dirección de Habitación:</h6></label>
-            <input type="text" name="dir_hab" id="dir_hab" class="form-control" value="<?php echo "$dirH"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="telf_cont"><h6>Telefono de Contacto:</h6></label>
-            <input type="text" name="telf_cont" id="telf_cont" class="form-control" value="<?php echo "$tlfC"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="lug_trab"><h6>Lugar de Trabajo:</h6></label>
-            <input type="text" name="lug_trab" id="lug_trab" class="form-control" value="<?php echo "$lugT"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="Estado"><h6>Estado:</h6></label>
-            <input type="text" name="Estado" id="Estado" class="form-control" value="<?php echo "$est"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="municipio"><h6>Municipio:</h6></label>
-            <input type="text" name="municipio" id="municipio" class="form-control" value="<?php echo "$mun"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="departamento"><h6>Departamento:</h6></label>
-            <input type="text" name="departamento" id="departamento" class="form-control" value="<?php echo "$dep"; ?>">
-        </div>
-
-        
-        <div class="form-group col-6 mt-2">
-            <label for="Edo_civil"><h6>Estado Civil:</h6></label>
-            <input type="text" name="Edo_civil" id="Edo_civil" class="form-control" value="<?php echo "$estC"; ?>">
+        <div class="form-group col-12 mt-2">
+            <label for="seguimiento"><h6>Seguimiento:</h6></label>
+            <textarea name="seguimiento" id="seguimiento" rows="4" class="form-control" required><?php echo $seg; ?></textarea>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Es necesario llenar este campo</div>
         </div>
         
 

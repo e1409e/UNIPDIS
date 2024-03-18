@@ -5,14 +5,14 @@
 
 <div class="container w-75">
 <h2 class="mt-5 item-title text-center">Agregar Datos del Pariente</h2> 
-  <div class="card card-body">
+  <div class="card card-body kardA">
      <form action="/UNIPDIS/includes/guardados/save_otros_parientes.php" method="POST" class="row justify-content-center align-items-center needs-validation">
        
 
             <div class="col-6 mt-2">
             <h6 for="opciones">Estudiante:</h6>
                 <select class="form-select estuselect2" aria-label="Default select example" name="estudiantes_id" id="estudiantes_uni" required>
-                   <option value="estudiantes_uni">Seleccione un estudiante</option>
+                   <option></option>
                     <?php
                   // Conexión a la base de datos
                   $conexion = mysqli_connect("localhost", "root", "", "unipdis");

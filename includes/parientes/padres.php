@@ -5,9 +5,9 @@
 
 
 
-<div class="container W-75">
-  <h2 class="mt-5">Representante</h2>
-  <div class="card card-body"> 
+<div class="container mb-5 W-75">
+  <h2 class="mt-5 text-center">REPRESENTANTES</h2>
+  <div class="card card-body kardE"> 
     
 
     <div class="table-responsive" > 

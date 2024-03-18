@@ -1,3 +1,4 @@
+
 <!-- SCRIPTS -->
 
 
@@ -48,28 +49,9 @@
     $('.discselect2').select2();
 });
 </script>
-    <!-- <script>
-        function toggleSeccion() {
-        var seccion = document.getElementById("seccionOculta");
-        if (seccion.style.display === "none") {
-        seccion.style.display = "block";
-        } else {
-        seccion.style.display = "none";
-            }
-        }
-    </script>
-
-    <script>
-        function toggleSeccion2() {
-        var seccion = document.getElementById("seccionOculta2");
-        if (seccion.style.display === "none") {
-        seccion.style.display = "block";
-        } else {
-        seccion.style.display = "none";
-            }
-        }
-    </script> -->
+    
 
 
 </body>
+
 </html>

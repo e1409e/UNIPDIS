@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="/UNIPDIS/bootstrap/css/bootstrap.min.css"/>  
 
     <!-- <!– Mi conf css –> -->
-    <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/> 
+    <link rel="stylesheet" href="/UNIPDIS/CSS/extras.css"/>
+    <link rel="stylesheet" href="/UNIPDIS/CSS/estilos.css"/>  
 
     <!-- <!– Font Awesome Stylesheets –> -->
     <link rel="stylesheet" href="/UNIPDIS/CSS/font-awesome.min.css">
+
     <!-- select2 -->
     <link href="/UNIPDIS/select2/css/select2.min.css" rel="stylesheet" />
  
@@ -37,14 +39,12 @@
     <script src="/UNIPDIS/DataTables/JSZip-3.10.1/jszip.min.js"></script>
     
     <!-- select2 -->
-    <script src="/UNIPDIS/select2/js/select2.min.js"></script>    
-    
+    <script src="/UNIPDIS/select2/js/select2.min.js"></script>
 
-</head>
+    <!-- font awesome -->
+    <script src="/UNIPDIS/JS/fontA.js"></script>
 
-<body>
-
-<nav class="navbar navbar-expand-lg bg-primary justify-content-between">
+    <nav class="navbar navbar-expand-lg bg-primary justify-content-between">
   <div class="container-fluid">
     <a class="navbar-brand">
       <img src="/UNIPDIS/img/logoUJGH.png" alt="Logo" width="165" class="img-fluid d-inline-block align-text-center">
@@ -56,18 +56,18 @@
         <ul class="navbar-nav ">
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/UNIPDIS/index.php">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="/UNIPDIS/index.php"><i class="fa fa-house"></i>   Inicio</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/UNIPDIS/includes/Estudiantes.php">Estudiantes</a>
+              <a class="nav-link" href="/UNIPDIS/includes/Estudiantes.php"><i class="fa fa-school"></i>   Estudiantes</a>
             </li>
 
            
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Parientes
+                <i class="fa fa-people-roof"></i>   Parientes
               </a>
 
               <ul class="dropdown-menu">
@@ -77,7 +77,7 @@
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Informe Medico
+                <i class="fa fa-file-medical"></i>   Informe Medico
               </a>
 
               <ul class="dropdown-menu">
@@ -87,9 +87,9 @@
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/info_medico/incidencias.php">Incidencias</a></li>
               </ul>
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown ">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Universidad
+                <i class="fa fa-building-columns"></i>   Universidad
               </a>
 
               <ul class="dropdown-menu">
@@ -105,7 +105,13 @@
         </ul>
     </div>
     <li>
-      <a href="/UNIPDIS/includes/cerrar_sesion.php" class="btn btn-secondary">Cerrar Sesion</a>
+      <a href="/UNIPDIS/includes/cerrar_sesion.php" class="btn btn-danger"><i class="fa fa-right-from-bracket"></i> Cerrar Sesion</a>
     </li>
   </div>
-</nav>
+</nav>    
+    
+
+</head>
+
+<body class="cuerpo1">
+

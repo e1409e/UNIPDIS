@@ -7,8 +7,8 @@
 <!-- FACULTADES -->
 
 <div class="container w-75">
-  <h2 class="mt-5">Facultades</h2>
-  <div class="card card-body"> 
+  <h2 class="mt-5 text-center">FACULTADES</h2>
+  <div class="card card-body kardE"> 
     <div class="table-responsive" > 
           <table class="table rounded table-hover table-bordered  table-lg mb-5">
             <thead>

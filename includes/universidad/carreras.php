@@ -4,8 +4,8 @@
 <!-- CARRERAS -->
 
 <div class="container w-75">
-  <h2 class="mt-5">Carreras</h2>
-  <div class="card card-body"> 
+  <h2 class="mt-5 text-center">CARRERAS</h2>
+  <div class="card card-body kardE"> 
     
 
     <div class="table-responsive" > 

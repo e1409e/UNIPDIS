@@ -1,3 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.kardE{
+    background-color: #F7F9F9 ;
+}
+.kardA{
+    background-color: #ECF0F1;
+}
+
+.cuerpo1{
+    background-color: #FBFCFC;
+    color: black;
+    font-family: cursive;
+}
+
+.imagen{
+    width: 200px;
+    height: 200px;
+    margin: 30px 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sub{
+    margin: 0px 80px;
+    font-size: 20px;
+    font-family: cursive;
+    color: black;
+}
+
+
+.titulo{
+    text-align: center;
+    color: black;
+}
+
+.contenido{
+    display: flex;
+    margin: 60px;
+}
+
+
+.conteiner{
+    display: inline-flex;
+}
+
+.pie{
+    display: flex;
+    text-align: center;
+}
+
+.leyes{
+    margin-top: 50px;
+    font-size: 20px;
+    font-family: cursive;
+    color: black;
+}
+
+.articulos{
+    margin-top: 25px ;
+}
+
+.img{
+    width: 400px;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.pie-pagina{
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: #0a141d;
+    font-family: cursive;
+}
+
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    padding: 50px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+}
 
 /*  table1 {
     
@@ -21,8 +128,8 @@
   }
 */
 
-  #seccionOculta {
+/*  #seccionOculta {
 /*    background-color: lightgray;*/
-    padding: 10px;
+  /*  padding: 10px;
   }
-
+*/

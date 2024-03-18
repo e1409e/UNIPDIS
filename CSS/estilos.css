@@ -15,7 +15,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
-
 }
 
 main{
@@ -40,7 +39,7 @@ main{
 	display: flex;
 	justify-content: right;
 	backdrop-filter: blur(10px);
-	background-color: rgba(0, 128, 250, 0.5);
+	background-color: rgba(38, 22, 84, 0.5);
 }
 
 .caja div{

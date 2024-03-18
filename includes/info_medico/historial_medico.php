@@ -3,8 +3,8 @@
 
 
 <div class="container w-75">
-  <h2 class="mt-5">Historial Medico</h2>
-  <div class="card card-body">
+  <h2 class="mt-5 text-center">HISTORIAL MEDICO</h2>
+  <div class="card card-body kardE">
   
     
 

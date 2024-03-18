@@ -63,7 +63,7 @@
         $lug_naci = $_POST['lug_naci'];
         $fech_naci = $_POST['fech_naci'];
         $dir_hab = $_POST['dir_hab'];
-        $telf_cont = $_POST['telf_cont'];
+        $telf_cont = $_POST['telefono_contacto'];
         $lug_trab = $_POST['lug_trab'];
         $Estado = $_POST['Estado'];
         $municipio = $_POST['municipio'];

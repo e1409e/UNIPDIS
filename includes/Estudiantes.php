@@ -1,13 +1,13 @@
 <?php  include("connect.php") ?>
 <?php include("header.php") ?>
 
-<div class="container w-75">
-  <h2 class="mt-5">Estudiantes</h2>
-  <div class="card card-body"> 
+<div class="container mb-5 w-75">
+  <h2 class="mt-5 text-center">ESTUDIANTES</h2>
+  <div class="card card-body kardE"> 
     
 
     <div class="table-responsive" > 
-        <!-- <div id="seccionOculta" style="display: none;"> -->
+        
           <table id="estu" class="table rounded table-hover table-bordered table-lg mb-2 mt-3" >
             <thead>
               <tr>
@@ -72,7 +72,7 @@
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="/edits/edit_estudiante.php?id=<?php echo $row['id_estudiante']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+                          <a href="/UNIPDIS/includes/edits/edit_estudiante.php?id=<?php echo $row['id_estudiante']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
 
 
                           <a href="/UNIPDIS/includes/deletes/delete_estu.php?id=<?php echo $row['id_estudiante']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
@@ -87,10 +87,10 @@
           </table>
 
 
-        <!-- </div> -->
+       
         
-        <!-- <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button> -->
-        <a href="/UNIPDIS/includes/formularios/Agreg_Estudiantes.php" class="btn btn-primary mb-3 mt-3">Nuevo</a>
+        
+        <a href="/UNIPDIS/includes/formularios/agreg_E.php" class="btn btn-primary mb-3 mt-3">Nuevo</a>
        
         
         
@@ -98,6 +98,8 @@
 
     </div>
   </div>
+</div>  
+
 
 <script type="text/javascript">
     $(document).ready(function() {

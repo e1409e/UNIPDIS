@@ -4,8 +4,8 @@
 
 
 <div class="container W-75">
-  <h2 class="mt-5">Otros Parientes</h2>
-  <div class="card card-body">
+  <h2 class="mt-5 text-center">OTROS PARIENTES</h2>
+  <div class="card card-body kardE">
   
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->

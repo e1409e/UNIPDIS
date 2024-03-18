@@ -4,9 +4,9 @@
 
 
 <div class="container w-75">
-<h2 class="mt-5 item-title text-center">Agregar Discapacidad</h2>
+<h2 class="mt-5 item-title text-center ">Agregar Discapacidad</h2>
 <div class="col-md-8 mx-auto"> 
-  <div class="card card-body mb-3">
+  <div class="card card-body mb-3 kardA">
      <form action="/UNIPDIS/includes/guardados/save_disc.php" method="POST" class="row justify-content-center needs-validation">
        
 

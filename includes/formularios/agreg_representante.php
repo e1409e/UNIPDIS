@@ -5,7 +5,7 @@
 
 <div class="container w-75">
 <h2 class="mt-5 item-title text-center">Agregar Representante</h2> 
-  <div class="card card-body mb-3">
+  <div class="card card-body mb-3 kardA">
      <form action="/UNIPDIS/includes/guardados/save_representante.php" method="POST" class="row justify-content-center align-items-center needs-validation">
        
       
@@ -19,7 +19,7 @@
         <div class="col-6 mt-2">
         <h6 for="opciones">Estudiante:</h6>
                 <select class="form-select estuselect2" aria-label="Default select example" name="id_estudiante" id="Estudiante">
-                   <option value="Estudiante">Seleccione un Estudiante</option>
+                   <!-- <option value="Estudiante">Seleccione un Estudiante</option> -->
                     <?php
                   // Conexión a la base de datos
                   $conexion = mysqli_connect("localhost", "root", "", "unipdis");

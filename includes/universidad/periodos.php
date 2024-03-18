@@ -4,8 +4,8 @@
 <!-- PERIODOS -->
 
 <div class="container w-75">
-  <h2 class="mt-5">Periodos</h2>
-  <div class="card card-body"> 
+  <h2 class="mt-5 text-center">PERIODOS</h2>
+  <div class="card card-body kardE"> 
     
 
     <div class="table-responsive" > 
