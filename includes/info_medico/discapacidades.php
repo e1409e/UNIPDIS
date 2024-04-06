@@ -9,7 +9,7 @@
 
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table id="Tdisc" class="table table-bordered rounded table-hover table-lg mb-2 mt-3">
+          <table id="Tdisc" class="table rounded table-hover table-lg mb-2 mt-3">
             <thead>
               <tr>
                 <th class="col-1"></th>

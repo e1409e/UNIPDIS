@@ -12,7 +12,7 @@
 
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table class="table table-bordered rounded table-hover table-lg mb-2 mt-3" id="padre">
+          <table class="table  rounded table-hover table-lg mb-2 mt-3" id="padre">
             <thead>
               <tr>
                 <th class="text-nowrap col-auto"></th>

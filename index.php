@@ -26,11 +26,13 @@
 				<div class="conteiner" >
 					<img class="imagen" src="./img/auditiva.png">
 					<img class="imagen" src="./img/Motora.png">
+					<img class="imagen" src="./img/dPsicosocial.png">
 				</div>
 
 				<div class="pie"> 
 					<p class="sub">Discapacidad Auditiva</p>
 					<p class="sub">Discapacidad Motora</p>
+					<p class="sub">Discapacidad Psicosocial</p>
 				</div>
 			</div>
 

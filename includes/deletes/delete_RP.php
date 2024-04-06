@@ -4,14 +4,14 @@ include("../connect.php");
 // Verifica si se ha enviado el parámetro 'id' en la URL
 if (isset($_GET['id'])) {
     // Obtiene el id de la cita a eliminar desde la URL
-    $id_padres = $_GET['id'];
+    $id_psicologico = $_GET['id'];
 
     // Query para eliminar la cita con el id proporcionado
-    $sql = "DELETE FROM padres WHERE id_padres = $id_padres";
+    $sql = "DELETE FROM reporte_psicologico WHERE id_psicologico = $id_psicologico";
 
     if (mysqli_query($conn, $sql)) {
         // echo "Cita eliminada correctamente";
-        header("Location: ../parientes/padres.php");
+        header("Location: ../info_medico/reportePsico.php");
     } else {
         echo "Error al eliminar: " . mysqli_error($conn);
     }

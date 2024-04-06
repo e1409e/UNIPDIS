@@ -13,10 +13,10 @@ if (isset($_GET['id'])) {
         // echo "Cita eliminada correctamente";
         header("Location: ../info_medico/citas.php");
     } else {
-        echo "Error al eliminar la cita: " . mysqli_error($conn);
+        echo "Error al eliminar: " . mysqli_error($conn);
     }
 } else {
-    echo "Error: No se proporcionó un ID de cita válido";
+    echo "Error: No se proporcionó un ID válido";
 }
 
 // Cierra la conexión a la base de datos

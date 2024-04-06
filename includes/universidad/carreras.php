@@ -10,7 +10,7 @@
 
     <div class="table-responsive" > 
         
-          <table class="table rounded table-hover table-bordered  table-lg mb-5">
+          <table class="table rounded table-hover   table-lg mb-5">
             <thead>
               <tr>
                 <th class="col-1">ID</th>

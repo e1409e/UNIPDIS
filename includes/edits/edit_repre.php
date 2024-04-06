@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
         $id_estudiante = $_POST['id_estudiante'];
       
 
-      $query = "UPDATE padres set tipo_familiar = '$parentesco', cedula_padre = '$cedula_repre', lugar_nacimiento = '$lug_naci', fecha_nacimiento = '$fech_naci', direccion_habitacion = '$dir_hab', telefono_contacto = '$telf_cont', lugar_trabajo = '$lug_trab', estado = '$Estado', municipio = '$municipio', departamento = '$departamento', estadodo_civil = '$Edo_civil', id_estudiante = '$id_estudiante' WHERE id_padres = $id_repre;";
+      $query = "UPDATE padres set tipo_familiar = '$parentesco', cedula_padre = '$cedula_repre', lugar_nacimiento = '$lug_naci', fecha_nacimiento = '$fech_naci', direccion_habitacion = '$dir_hab', telefono_contacto = '$telf_cont', lugar_trabajo = '$lug_trab', estado = '$Estado', municipio = '$municipio', departamento = '$departamento', estadodo_civil = '$Edo_civil', id_estudiante = '$id_estudiante' WHERE id_padres = $id_repre ;";
       mysqli_query($conn, $query);
       
       header('Location: ../parientes/padres.php');
@@ -62,7 +62,8 @@ if (isset($_GET['id'])) {
 <?php include('../header.php'); ?>
 <div class="container p-4">
   <div class="row">
-    <div class="col-md-4 mx-auto">
+    <div class="col-md-6 mx-auto">
+        <h2 class="text-center mt-3">Editar Representante</h2>
       <div class="card card-body">
       <form action="edit_repre.php?id=<?php echo $_GET['id']; ?>" method="POST" class="row justify-content-center align-items-center">
 
@@ -78,8 +79,8 @@ if (isset($_GET['id'])) {
 
                     include("../connect.php");
 
-                    $id_inci = $_GET['id'];
-                    $select = "SELECT a.id_estudiante, CONCAT(a.nombres, ' ', a.apellidos, ' C.I: ', a.cedula) AS Estudiante, b.hora_incidente, b.fecha_incidente, b.donde_incidente, b.descripcion_incidente, b.acuerdos, b.observaciones FROM incidencias b INNER JOIN estudiantes a ON a.id_estudiante = b.id_estudiante WHERE id_incidencia = $id_inci;";
+                    $id_repre = $_GET['id'];
+                    $select = "SELECT a.id_estudiante, CONCAT(a.nombres, ' ', a.apellidos, ' C.I: ', a.cedula) AS Estudiante, b.hora_incidente, b.fecha_incidente, b.donde_incidente, b.descripcion_incidente, b.acuerdos, b.observaciones FROM incidencias b INNER JOIN estudiantes a ON a.id_estudiante = b.id_estudiante;";
                     $resultados = mysqli_query($conn, $select);
                     $row = mysqli_fetch_array($resultados);
                     echo '<option value="' . $row['id_estudiante'] . '">' . $row['Estudiante'] . '</option>';  

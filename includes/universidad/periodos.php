@@ -10,7 +10,7 @@
 
     <div class="table-responsive" > 
         <!-- <div id="seccionOculta" style="display: none;"> -->
-          <table id="Tper" class="table rounded table-hover table-bordered  table-lg mb-2 mt-3">
+          <table id="Tper" class="table rounded table-hover   table-lg mb-2 mt-3">
             <thead>
               <tr>
                 <th class="text-nowrap col-1">ID</th>

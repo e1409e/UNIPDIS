@@ -3,7 +3,7 @@
 
 
 <div class="container w-75">
-  <h2 class="mt-5 text-center">HISTORIAL MEDICO</h2>
+  <h2 class="mt-5 text-center">Reportes Psicologicos</h2>
   <div class="card card-body kardE">
   
     
@@ -17,10 +17,15 @@
               <tr>
                 <th class="col-1"></th>
                 <th class="col-1">#</th>
-                <th class="text-nowrap col-auto">Estudiante</th>
-                <th class="text-nowrap col-auto">Certificado de Conapdis</th>
-                <th class="text-nowrap col-auto">Informe Medico</th>
-                <th class="text-nowrap col-auto">Tratamiento</th>
+                <th class="text-nowrap col-auto">Nombre</th>
+                <th class="text-nowrap col-auto">Apellido</th>
+                <th class="text-nowrap col-auto">Lugar de Nacimiento</th>
+                <th class="text-nowrap col-auto">Fecha de Nacimiento</th>
+                <th class="text-nowrap col-auto">Edad</th>
+                <th class="text-nowrap col-auto">Nivel de Instrucción</th>
+                <th class="text-nowrap col-auto">Motivo de Consulta</th>
+                <th class="text-nowrap col-auto">Síntesis Diagnóstica</th>
+                <th class="text-nowrap col-auto">Recomendaciones</th>
                 <th class="text-nowrap col-1">Acciones</th>
               </tr>
             </thead>
@@ -28,26 +33,31 @@
               <!-- Aquí iría el contenido de la base de datos -->
               <?php 
                 include("../connect.php");
-                $select = "SELECT b.id_historialmedico , CONCAT(a.nombres, ' ', a.apellidos, ' C.I: ', a.cedula) AS Estudiante, b.certificado_conapdis, b.informe_medico, b.tratamiento FROM historial_medico b INNER JOIN estudiantes a ON a.id_estudiante = b.id_estudiante;";
+                $select = "SELECT * FROM reporte_psicologico";
                 $resultados = mysqli_query($conn, $select);
 
                 while($row = mysqli_fetch_array($resultados)){ ?>
                   <tr>
                     <!-- columnas de la tabla en mysql-->
                     <td class="text-nowrap col-auto"></td>
-                    <td class="text-nowrap col-auto"><?php echo $row['id_historialmedico'] ?></td>
-                    <td class="text-nowrap col-auto"><?php echo $row['Estudiante'] ?></td>
-                    <td class="text-nowrap col-auto"><?php echo $row['certificado_conapdis'] ?></td>
-                    <td class="text-nowrap col-auto"><?php echo $row['informe_medico'] ?></td>
-                    <td class="text-nowrap col-auto"><?php echo $row['tratamiento'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['id_psicologico'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['Nombre'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['Apellido'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['lugnac'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['fechnac'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['edad'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['nv_ins'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['motivocon'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['sintdiag'] ?></td>
+                    <td class="text-nowrap col-auto"><?php echo $row['recomendaciones'] ?></td>
 
                     <!--Botones de acciones-->
                       <td>
                         <div class="btn-group">
-                          <a href="../edits/edit_HM.php?id=<?php echo $row['id_historialmedico']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
+                          <a href="../edits/edit_RP.php?id=<?php echo $row['id_psicologico']; ?>" class="btn btn-secondary d-inline-block"><i class="fa fa-pencil"></i></a>
 
 
-                          <a href="../deletes/delete_HM.php?id=<?php echo $row['id_historialmedico']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
+                          <a href="../deletes/delete_RP.php?id=<?php echo $row['id_psicologico']; ?>" class="btn btn-danger d-inline-block"><i class="fa fa-trash"></i></a>
                         </div>
                       </td> 
                   </tr>
@@ -60,7 +70,7 @@
 
         <!-- </div>
         <button class="btn btn-outline-info btn-xs" onclick="toggleSeccion()">Mostrar/Ocultar</button>  -->
-        <a href="/UNIPDIS/includes/formularios/agreg_hist_medico.php" class="btn btn-primary mb-3 mt-3">Nuevo</a> 
+        <a href="/UNIPDIS/includes/formularios/agreg_RP.php" class="btn btn-primary mb-3 mt-3">Nuevo</a> 
        
 
     </div>
@@ -90,12 +100,16 @@
                   text: '<i class="fa fa-file"></i> ',
                   titleAttr: 'Exportar a PDF',
                   className: 'btn btn-danger',
+                   orientation: 'landscape',
+                    pageSize: 'LEGAL',
                 },
                 {
                   extend: 'print',
                   text: '<i class="fa fa-print"></i> ',
                   titleAttr: 'Imprimir',
                   className: 'btn btn-info',
+                   orientation: 'landscape',
+                    pageSize: 'LEGAL',
                 },
 
               ],

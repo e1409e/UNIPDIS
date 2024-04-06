@@ -85,6 +85,7 @@
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/info_medico/discapacidades.php">Discapacidades</a></li>
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/info_medico/historial_medico.php">Historial Medico</a></li>
                 <li><a class="dropdown-item" href="/UNIPDIS/includes/info_medico/incidencias.php">Incidencias</a></li>
+                <li><a class="dropdown-item" href="/UNIPDIS/includes/info_medico/reportePsico.php">Reporte Psicologico</a></li>
               </ul>
 
             <li class="nav-item dropdown ">

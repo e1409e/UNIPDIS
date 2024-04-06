@@ -47,7 +47,7 @@
             
             <div class="form-group col-6 mt-2">
                  <label for="fech_inc"><h6>Fecha del Incidente:</h6></label>
-                <input type="text" name="fech_inc" id="fech_inc" class="form-control" required>
+                <input type="date" name="fech_inc" id="fech_inc" class="form-control" required>
                 <div class="valid-feedback"></div>
                 <div class="invalid-feedback">Es necesario llenar este campo</div>
             </div>

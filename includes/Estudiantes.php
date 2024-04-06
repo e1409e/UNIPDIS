@@ -8,7 +8,7 @@
 
     <div class="table-responsive" > 
         
-          <table id="estu" class="table rounded table-hover table-bordered table-lg mb-2 mt-3" >
+          <table id="estu" class="table rounded table-hover  table-lg mb-2 mt-3" >
             <thead>
               <tr>
                 <th class="col-auto"></th>
